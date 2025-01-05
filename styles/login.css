@@ -1,0 +1,81 @@
+body {
+    background-color: #cdcdcd;
+    font-family: 'Roboto', sans-serif;
+}
+
+.image-container {
+    background-image: url('../img/iv.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    width: 100%;
+}
+
+form .form-control {
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    font-size: 14px;
+}
+
+form .btn-primary {
+    background-color: #2a52be;
+    border-color: #2a52be;
+    border-radius: 8px;
+    font-size: 16px;
+    padding: 10px;
+}
+
+form .btn-primary:hover {
+    background-color: #1a3b92;
+    border-color: #1a3b92;
+}
+
+h2 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    color: #333;
+}
+
+.container-fluid {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 20px; /* Add padding to top and bottom */
+}
+
+.row {
+    max-width: 800px; /* Reduce the maximum width */
+    width: 100%;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    margin: 0 20px; /* Add margin to both sides */
+}
+
+.col-lg-6 {
+    padding: 0;
+}
+
+.bg-light {
+    padding: 40px; /* Reduce the padding */
+}
+
+.text-center a {
+    color: #2a52be;
+}
+
+.text-center a:hover {
+    text-decoration: underline;
+}
+
+.btn-outline-primary {
+    border-radius: 8px;
+    font-size: 16px;
+    padding: 10px;
+    width: 150px;
+}
+
+.btn-outline-primary i {
+    margin-right: 8px;
+}

@@ -1,27 +1,43 @@
 body {
     font-family: 'Roboto', sans-serif;
+    background-color: #f0f2f5; /* Light grey background */
+    color: #333; /* Dark grey text color */
 }
 
 h1, h2, h4, .navbar-brand, .card-title {
     font-family: 'Poppins', sans-serif;
+    color: #333; /* Dark grey text color */
 }
 
 .hero-section h1 {
     font-family: 'Poppins', sans-serif;
     font-weight: 700;
+    color: #333; /* Dark grey text color */
 }
 
 .bg-dark-green {
-    background-color: #006400;
+    background-color: #2c3e50; /* Dark blue background */
     color: white;
 }
 
 .custom-navbar {
     height: 70px; /* Adjust this value to make the navbar longer */
+    transition: background-color 0.3s, box-shadow 0.3s;
 }
 
-.custom-btn {
-    margin-top: 5px; /* Adjust this value to center the buttons vertically */
+.custom-navbar.navbar-scrolled {
+    background-color: rgba(44, 62, 80, 0.8); /* Translucent dark blue background */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px); /* Add blur effect */
+}
+
+.nav-link {
+    color: white;
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: #e74c3c; /* Red color on hover */
 }
 
 .hero-section {
@@ -49,23 +65,9 @@ h1, h2, h4, .navbar-brand, .card-title {
     color: white;
 }
 
-.btn-primary.custom-btn {
-    background-color: #007bff;
-    border-color: #007bff;
-    font-size: 1.25rem;
-    padding: 0.75rem 1.5rem;
-    border-radius: 30px;
-}
-
-.btn-light.custom-btn {
-    font-size: 1.25rem;
-    padding: 0.75rem 1.5rem;
-    border-radius: 30px;
-}
-
 #about {
-    background-color: #f8f9fa;
-    color: #333;
+    background-color: #ecf0f1; /* Light grey background */
+    color: #333; /* Dark grey text color */
 }
 
 #about h1 {
@@ -92,7 +94,7 @@ h1, h2, h4, .navbar-brand, .card-title {
 
 .stat {
     flex: 1 1 calc(50% - 1rem);
-    background-color: #fff;
+    background-color: #fff; /* White background */
     padding: 1rem;
     border-radius: 10px;
     text-align: center;
@@ -102,7 +104,7 @@ h1, h2, h4, .navbar-brand, .card-title {
 .stat strong {
     display: block;
     font-size: 2rem;
-    color: #e63946;
+    color: #e74c3c; /* Red color */
 }
 
 .stat p {
@@ -112,8 +114,8 @@ h1, h2, h4, .navbar-brand, .card-title {
 }
 
 #features {
-    background-color: #f8f9fa;
-    color: #333;
+    background-color: #ecf0f1; /* Light grey background */
+    color: #333; /* Dark grey text color */
 }
 
 #features h2 {
@@ -122,7 +124,7 @@ h1, h2, h4, .navbar-brand, .card-title {
 }
 
 .feature-box {
-    background-color: #fff;
+    background-color: #fff; /* White background */
     padding: 1.5rem;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -146,4 +148,103 @@ h1, h2, h4, .navbar-brand, .card-title {
 .feature-box p {
     font-size: 1rem;
     color: #666;
+}
+
+#testimonials {
+    background-color: #2c3e50; /* Dark blue background */
+    color: #fff;
+    padding: 3rem 0;
+}
+
+.testimonial-carousel {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+}
+
+.testimonial-item {
+    flex: 0 0 100%;
+    scroll-snap-align: center;
+    padding: 1rem;
+}
+
+.testimonial-item .card {
+    background-color: #000;
+    border: none;
+}
+
+.testimonial-card {
+    background-color: #333;
+    border: none;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-10px);
+}
+
+.testimonial-card img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border: 3px solid #fff;
+}
+
+.testimonial-card .card-title {
+    font-size: 1.25rem;
+    margin-top: 1rem;
+    color: #e74c3c; /* Red color */
+}
+
+.testimonial-card .card-text {
+    font-size: 1rem;
+    color: #ccc;
+}
+
+#faqs {
+    background-color: #ecf0f1; /* Light grey background */
+    color: #333; /* Dark grey text color */
+}
+
+#faqs h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+#contact {
+    background-color: #ecf0f1; /* Light grey background */
+    color: #333; /* Dark grey text color */
+}
+
+#contact h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+footer {
+    background-color: #2c3e50; /* Dark blue background */
+    color: white;
+    padding: 1rem 0;
+}
+
+footer p {
+    margin: 0;
+}
+
+footer ul {
+    padding: 0;
+    list-style: none;
+}
+
+footer ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+footer ul li a {
+    color: white;
+    text-decoration: none;
 }
