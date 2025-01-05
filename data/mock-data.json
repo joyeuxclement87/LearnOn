@@ -1,0 +1,17 @@
+[
+    {
+        "name": "Alice",
+        "teaches": "Guitar, Cooking",
+        "wantsToLearn": "Painting"
+    },
+    {
+        "name": "Bob",
+        "teaches": "Coding, Public Speaking",
+        "wantsToLearn": "Guitar"
+    },
+    {
+        "name": "Carol",
+        "teaches": "Yoga, Photography",
+        "wantsToLearn": "Coding"
+    }
+]
