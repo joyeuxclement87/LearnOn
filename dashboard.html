@@ -12,22 +12,22 @@
 <body class="bg-dark text-light">
 
     <!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
+    <nav class="navbar navbar-expand-lg navbar-dark shadow-sm fixed-top">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="#">LearnOn</a>
+            <a class="navbar-brand fw-bold" href="dashboard.html">LearnOn</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Home</a>
+                        <a class="nav-link" href="dashboard.html">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Messages</a>
+                        <a class="nav-link" href="messages.html">Messages</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Browse Skills</a>
+                        <a class="nav-link" href="Browseskill.html">Browse Skills</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-danger" href="#">Logout</a>
@@ -38,7 +38,7 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero text-center py-5">
+    <section class="hero text-center ">
         <div class="overlay">
             <div class="container">
                 <h1 class="display-4 text-light">Hello, John Doe!</h1>
@@ -53,11 +53,11 @@
     </section>
 
     <!-- Main Content -->
-    <div class="container my-5">
+    <div class="container my-5 pt-5">
         <div class="row">
             <!-- Sidebar -->
             <div class="col-md-3">
-                <div class="card bg-dark text-light shadow-sm mb-4">
+                <div class="card text-light shadow-sm mb-4">
                     <img src="./img/42907.jpg" class="card-img-top" alt="Profile Picture">
                     <div class="card-body text-center">
                         <h5 class="card-title">John Doe</h5>
@@ -68,17 +68,17 @@
                 </div>
 
                 <!-- Account Settings -->
-                <div class="card bg-dark text-light shadow-sm">
+                <div class="card text-light shadow-sm">
                     <div class="card-body">
                         <h5 class="card-title">Account Settings</h5>
                         <ul class="list-group list-group-flush">
-                            <li class="list-group-item bg-dark text-light">
+                            <li class="list-group-item text-light">
                                 <a href="#" class="text-decoration-none text-light" onclick="editProfile()">Edit Profile</a>
                             </li>
-                            <li class="list-group-item bg-dark text-light">
+                            <li class="list-group-item text-light">
                                 <a href="#" class="text-decoration-none text-light" onclick="changePassword()">Change Password</a>
                             </li>
-                            <li class="list-group-item bg-dark text-danger">
+                            <li class="list-group-item text-danger">
                                 <a href="#" class="text-decoration-none text-danger" onclick="deleteAccount()">Delete Account</a>
                             </li>
                         </ul>
@@ -88,12 +88,71 @@
 
             <!-- Main Section -->
             <div class="col-md-9">
+                <!-- Analytics Section -->
+                <div class="mb-4">
+                    <h4>Analytics</h4>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="card text-light shadow-sm mb-3">
+                                <div class="card-body">
+                                    <h5 class="card-title">Sessions Completed</h5>
+                                    <p class="card-text">10</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card text-light shadow-sm mb-3">
+                                <div class="card-body">
+                                    <h5 class="card-title">Skills Learned</h5>
+                                    <p class="card-text">5</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card text-light shadow-sm mb-3">
+                                <div class="card-body">
+                                    <h5 class="card-title">Skills Taught</h5>
+                                    <p class="card-text">3</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Upcoming Sessions Section -->
+                <div class="mb-4">
+                    <h4>Upcoming Sessions</h4>
+                    <div class="card text-light shadow-sm mb-3">
+                        <div class="card-body">
+                            <h5 class="card-title">Next Session</h5>
+                            <p class="card-text">Python Programming with Jane Smith</p>
+                            <p class="card-text">Date: 2023-10-15</p>
+                            <p class="card-text">Time: 10:00 AM</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Notifications Section -->
+                <div class="mb-4">
+                    <h4>Notifications</h4>
+                    <ul class="list-group">
+                        <li class="list-group-item text-light d-flex justify-content-between align-items-center">
+                            New message from Jane Smith
+                            <a href="messages.html?chat=Jane%20Smith&topic=Python" class="btn btn-sm btn-primary">View</a>
+                        </li>
+                        <li class="list-group-item text-light d-flex justify-content-between align-items-center">
+                            New session scheduled with Mike Johnson
+                            <a href="#" class="btn btn-sm btn-primary">View</a>
+                        </li>
+                    </ul>
+                </div>
+
                 <!-- Skills Section -->
                 <div class="mb-4">
                     <h4>Skills I Can Teach</h4>
                     <div class="row">
                         <div class="col-md-6">
-                            <div class="card bg-dark text-light shadow-sm mb-3">
+                            <div class="card text-light shadow-sm mb-3">
                                 <div class="card-body">
                                     <img src="./img/icons8-javascript.gif" alt="JavaScript" class="img-fluid mb-2" style="max-width: 50px;">
                                     <h5 class="card-title">JavaScript</h5>
@@ -103,7 +162,7 @@
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <div class="card bg-dark text-light shadow-sm mb-3">
+                            <div class="card text-light shadow-sm mb-3">
                                 <div class="card-body">
                                     <img src="img/icons8-pen.gif" alt="Graphic Design" class="img-fluid mb-2" style="max-width: 50px;">
                                     <h5 class="card-title">Graphic Design</h5>
@@ -121,7 +180,7 @@
                     <h4>Explore Skills</h4>
                     <div class="row">
                         <div class="col-md-6">
-                            <div class="card bg-dark text-light shadow-sm">
+                            <div class="card text-light shadow-sm">
                                 <div class="card-body">
                                     <img src="img/icons8-python.gif" alt="Python Programming" class="img-fluid mb-2" style="max-width: 50px;">
                                     <h5 class="card-title">Python Programming</h5>
@@ -131,7 +190,7 @@
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <div class="card bg-dark text-light shadow-sm">
+                            <div class="card text-light shadow-sm">
                                 <div class="card-body">
                                     <img src="img/icons8-conference-foreground-selected.gif" alt="Public Speaking" class="img-fluid mb-2" style="max-width: 50px;">
                                     <h5 class="card-title">Public Speaking</h5>
@@ -148,15 +207,15 @@
                 <div class="mb-4">
                     <h4>Recent Messages</h4>
                     <ul class="list-group">
-                        <li class="list-group-item bg-dark text-light d-flex justify-content-between align-items-center">
+                        <li class="list-group-item text-light d-flex justify-content-between align-items-center">
                             <img src="img/42907.jpg" alt="Jane Smith" class="img-fluid rounded-circle" style="max-width: 40px;">
                             Jane Smith - "Let’s schedule a session for Python."
-                            <button class="btn btn-sm btn-primary" onclick="viewMessage('Jane Smith')">Reply</button>
+                            <a href="messages.html?chat=Jane%20Smith&topic=Python" class="btn btn-sm btn-primary">Reply</a>
                         </li>
-                        <li class="list-group-item bg-dark text-light d-flex justify-content-between align-items-center">
+                        <li class="list-group-item text-light d-flex justify-content-between align-items-center">
                             <img src="img/2151100279.jpg" alt="Mike Johnson" class="img-fluid rounded-circle" style="max-width: 40px;">
                             Mike Johnson - "I can help with public speaking tips."
-                            <button class="btn btn-sm btn-primary" onclick="viewMessage('Mike Johnson')">Reply</button>
+                            <a href="messages.html?chat=Mike%20Johnson&topic=Public%20Speaking" class="btn btn-sm btn-primary">Reply</a>
                         </li>
                     </ul>
                 </div>
@@ -197,6 +256,15 @@
         function viewMoreSkills() {
             alert('View More Skills clicked');
         }
+
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('bg-blur');
+            } else {
+                navbar.classList.remove('bg-blur');
+            }
+        });
     </script>
 </body>
 </html>
