@@ -1,3 +1,6 @@
+let currentPage = 1;
+const skillsPerPage = 6;
+
 function startChat(name) {
     window.location.href = `messages.html?chat=${encodeURIComponent(name)}&topic=${encodeURIComponent(name)}`;
 }
@@ -40,4 +43,29 @@ function filterSkills() {
         }
     });
 }
+
+function changePage(page) {
+    const skillCards = document.querySelectorAll('.skill-card');
+    const totalPages = Math.ceil(skillCards.length / skillsPerPage);
+
+    if (page < 1 || page > totalPages) return;
+
+    currentPage = page;
+
+    skillCards.forEach((card, index) => {
+        if (index >= (currentPage - 1) * skillsPerPage && index < currentPage * skillsPerPage) {
+            card.style.display = 'block';
+        } else {
+            card.style.display = 'none';
+        }
+    });
+
+    document.getElementById('prevPage').classList.toggle('disabled', currentPage === 1);
+
+    document.getElementById('nextPage').classList.toggle('disabled', currentPage === totalPages);
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    changePage(1);
+});
 

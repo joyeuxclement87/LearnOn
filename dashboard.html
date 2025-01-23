@@ -24,10 +24,16 @@
                         <a class="nav-link" href="dashboard.html">Home</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="Browseskill.html">Browse Skills</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="messages.html">Messages</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="Browseskill.html">Browse Skills</a>
+                        <a class="nav-link" href="notifications.html">Notifications</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="profile.html">Profile</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-danger" href="#">Logout</a>
@@ -37,23 +43,14 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero text-center ">
-        <div class="overlay">
-            <div class="container">
-                <h1 class="display-4 text-light">Hello, John Doe!</h1>
-                <p class="lead text-light">Discover new skills, connect with experts, and grow your knowledge.</p>
-                <button class="btn btn-primary mb-3">Edit Profile</button>
-                <div class="input-group mb-3 w-50 mx-auto">
-                    <input type="text" class="form-control" placeholder="Search for skills or people" aria-label="Search">
-                    <button class="btn btn-outline-secondary" type="button">Search</button>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Main Content -->
     <div class="container my-5 pt-5">
+        <!-- Welcome Section -->
+        <div class="text-center mb-4">
+            <h1 class="display-4">Welcome back, John Doe!</h1>
+            <p class="lead">Discover new skills, connect with experts, and grow your knowledge.</p>
+        </div>
+
         <div class="row">
             <!-- Sidebar -->
             <div class="col-md-3">
@@ -67,19 +64,36 @@
                     </div>
                 </div>
 
-                <!-- Account Settings -->
-                <div class="card text-light shadow-sm">
+                <!-- Quick Links -->
+                <div class="card text-light shadow-sm mb-4">
                     <div class="card-body">
-                        <h5 class="card-title">Account Settings</h5>
+                        <h5 class="card-title">Quick Links</h5>
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item text-light">
-                                <a href="#" class="text-decoration-none text-light" onclick="editProfile()">Edit Profile</a>
+                                <a href="#" class="text-decoration-none text-light">New Skill Post</a>
                             </li>
                             <li class="list-group-item text-light">
-                                <a href="#" class="text-decoration-none text-light" onclick="changePassword()">Change Password</a>
+                                <a href="#" class="text-decoration-none text-light">My Skills</a>
                             </li>
-                            <li class="list-group-item text-danger">
-                                <a href="#" class="text-decoration-none text-danger" onclick="deleteAccount()">Delete Account</a>
+                            <li class="list-group-item text-light">
+                                <a href="#" class="text-decoration-none text-light">Settings</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Upcoming Sessions -->
+                <div class="card text-light shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title">Upcoming Sessions</h5>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item text-light">
+                                Python Programming with Jane Smith
+                                <small class="text-muted d-block">2023-10-15, 10:00 AM</small>
+                            </li>
+                            <li class="list-group-item text-light">
+                                Graphic Design with Mike Johnson
+                                <small class="text-muted d-block">2023-10-20, 2:00 PM</small>
                             </li>
                         </ul>
                     </div>
@@ -88,46 +102,67 @@
 
             <!-- Main Section -->
             <div class="col-md-9">
-                <!-- Analytics Section -->
+                <!-- Skill Matches Section -->
                 <div class="mb-4">
-                    <h4>Analytics</h4>
+                    <h4>Your Skill Matches</h4>
                     <div class="row">
-                        <div class="col-md-4">
+                        <div class="col-md-6">
                             <div class="card text-light shadow-sm mb-3">
                                 <div class="card-body">
-                                    <h5 class="card-title">Sessions Completed</h5>
-                                    <p class="card-text">10</p>
+                                    <h5 class="card-title">Python Programming</h5>
+                                    <span class="badge bg-primary">Programming</span>
+                                    <button class="btn btn-sm btn-primary mt-2">Match</button>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-6">
                             <div class="card text-light shadow-sm mb-3">
                                 <div class="card-body">
-                                    <h5 class="card-title">Skills Learned</h5>
-                                    <p class="card-text">5</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="card text-light shadow-sm mb-3">
-                                <div class="card-body">
-                                    <h5 class="card-title">Skills Taught</h5>
-                                    <p class="card-text">3</p>
+                                    <h5 class="card-title">Graphic Design</h5>
+                                    <span class="badge bg-primary">Art</span>
+                                    <button class="btn btn-sm btn-primary mt-2">Match</button>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Upcoming Sessions Section -->
+                <!-- Recent Activity Section -->
                 <div class="mb-4">
-                    <h4>Upcoming Sessions</h4>
-                    <div class="card text-light shadow-sm mb-3">
-                        <div class="card-body">
-                            <h5 class="card-title">Next Session</h5>
-                            <p class="card-text">Python Programming with Jane Smith</p>
-                            <p class="card-text">Date: 2023-10-15</p>
-                            <p class="card-text">Time: 10:00 AM</p>
+                    <h4>Recent Activity</h4>
+                    <ul class="list-group">
+                        <li class="list-group-item text-light d-flex justify-content-between align-items-center">
+                            You completed a session with Jane Smith
+                            <small class="text-muted">10:00 AM</small>
+                        </li>
+                        <li class="list-group-item text-light d-flex justify-content-between align-items-center">
+                            Mike Johnson sent you a message
+                            <small class="text-muted">9:30 AM</small>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Suggested Skills Section -->
+                <div class="mb-4">
+                    <h4>Skills You Might Like</h4>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="card text-light shadow-sm mb-3">
+                                <div class="card-body">
+                                    <h5 class="card-title">Public Speaking</h5>
+                                    <span class="badge bg-primary">Languages</span>
+                                    <button class="btn btn-sm btn-primary mt-2">Learn More</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card text-light shadow-sm mb-3">
+                                <div class="card-body">
+                                    <h5 class="card-title">Photography</h5>
+                                    <span class="badge bg-primary">Photography</span>
+                                    <button class="btn btn-sm btn-primary mt-2">Learn More</button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -138,84 +173,11 @@
                     <ul class="list-group">
                         <li class="list-group-item text-light d-flex justify-content-between align-items-center">
                             New message from Jane Smith
-                            <a href="messages.html?chat=Jane%20Smith&topic=Python" class="btn btn-sm btn-primary">View</a>
+                            <small class="text-muted">10:00 AM</small>
                         </li>
                         <li class="list-group-item text-light d-flex justify-content-between align-items-center">
                             New session scheduled with Mike Johnson
-                            <a href="#" class="btn btn-sm btn-primary">View</a>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Skills Section -->
-                <div class="mb-4">
-                    <h4>Skills I Can Teach</h4>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="card text-light shadow-sm mb-3">
-                                <div class="card-body">
-                                    <img src="./img/icons8-javascript.gif" alt="JavaScript" class="img-fluid mb-2" style="max-width: 50px;">
-                                    <h5 class="card-title">JavaScript</h5>
-                                    <p class="card-text">Beginner to advanced concepts.</p>
-                                    <button class="btn btn-sm btn-danger" onclick="removeSkill(this)">Remove</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="card text-light shadow-sm mb-3">
-                                <div class="card-body">
-                                    <img src="img/icons8-pen.gif" alt="Graphic Design" class="img-fluid mb-2" style="max-width: 50px;">
-                                    <h5 class="card-title">Graphic Design</h5>
-                                    <p class="card-text">Learn Photoshop and Illustrator.</p>
-                                    <button class="btn btn-sm btn-danger" onclick="removeSkill(this)">Remove</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <button class="btn btn-outline-success" onclick="addSkill()">Add Skill</button>
-                </div>
-
-                <!-- Feed Section -->
-                <div class="mb-4">
-                    <h4>Explore Skills</h4>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="card text-light shadow-sm">
-                                <div class="card-body">
-                                    <img src="img/icons8-python.gif" alt="Python Programming" class="img-fluid mb-2" style="max-width: 50px;">
-                                    <h5 class="card-title">Python Programming</h5>
-                                    <p class="card-text">Taught by Jane Smith</p>
-                                    <button class="btn btn-sm btn-primary" onclick="startChat('Jane Smith')">View Details</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="card text-light shadow-sm">
-                                <div class="card-body">
-                                    <img src="img/icons8-conference-foreground-selected.gif" alt="Public Speaking" class="img-fluid mb-2" style="max-width: 50px;">
-                                    <h5 class="card-title">Public Speaking</h5>
-                                    <p class="card-text">Taught by Mike Johnson</p>
-                                    <button class="btn btn-sm btn-primary" onclick="startChat('Mike Johnson')">View Details</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <button class="btn btn-outline-primary mt-3" onclick="viewMoreSkills()">View More Skills</button>
-                </div>
-
-                <!-- Messages Section -->
-                <div class="mb-4">
-                    <h4>Recent Messages</h4>
-                    <ul class="list-group">
-                        <li class="list-group-item text-light d-flex justify-content-between align-items-center">
-                            <img src="img/42907.jpg" alt="Jane Smith" class="img-fluid rounded-circle" style="max-width: 40px;">
-                            Jane Smith - "Let’s schedule a session for Python."
-                            <a href="messages.html?chat=Jane%20Smith&topic=Python" class="btn btn-sm btn-primary">Reply</a>
-                        </li>
-                        <li class="list-group-item text-light d-flex justify-content-between align-items-center">
-                            <img src="img/2151100279.jpg" alt="Mike Johnson" class="img-fluid rounded-circle" style="max-width: 40px;">
-                            Mike Johnson - "I can help with public speaking tips."
-                            <a href="messages.html?chat=Mike%20Johnson&topic=Public%20Speaking" class="btn btn-sm btn-primary">Reply</a>
+                            <small class="text-muted">9:30 AM</small>
                         </li>
                     </ul>
                 </div>
@@ -223,38 +185,27 @@
         </div>
     </div>
 
+    <!-- Footer -->
+    <footer class="bg-dark text-light text-center py-3">
+        <div class="container">
+            <p class="mb-0">&copy; 2023 LearnOn. All rights reserved.</p>
+            <div class="mt-2">
+                <a href="#" class="text-light me-3">Privacy Policy</a>
+                <a href="#" class="text-light me-3">Terms of Service</a>
+                <a href="#" class="text-light">Contact Us</a>
+            </div>
+            <div class="mt-2">
+                <a href="#" class="text-light me-2"><i class="bi bi-facebook"></i></a>
+                <a href="#" class="text-light me-2"><i class="bi bi-twitter"></i></a>
+                <a href="#" class="text-light"><i class="bi bi-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        function editProfile() {
-            alert('Edit Profile clicked');
-        }
-
-        function addSkill() {
-            alert('Add Skill clicked');
-        }
-
-        function removeSkill(element) {
-            element.closest('div.card').remove();
-        }
-
         function startChat(name) {
             alert('Start chat with ' + name);
-        }
-
-        function viewMessage(name) {
-            alert('View message from ' + name);
-        }
-
-        function changePassword() {
-            alert('Change Password clicked');
-        }
-
-        function deleteAccount() {
-            alert('Delete Account clicked');
-        }
-
-        function viewMoreSkills() {
-            alert('View More Skills clicked');
         }
 
         window.addEventListener('scroll', function() {

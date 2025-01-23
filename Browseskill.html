@@ -24,10 +24,13 @@
                         <a class="nav-link" href="dashboard.html">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="about.html">About</a>
+                        <a class="nav-link" href="Browseskill.html">Browse Skills</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="Browseskill.html">Browse Skills</a>
+                        <a class="nav-link" href="messages.html">Messages</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="notifications.html">Notifications</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="profile.html">Profile</a>
@@ -44,14 +47,17 @@
     <div class="container my-5 pt-5">
         <h2 class="mb-4">Browse Skills</h2>
 
-        <!-- Search and Filters -->
-        <div class="mb-4">
-            <div class="input-group mb-3">
-                <input type="text" class="form-control" placeholder="Search for skills or people" aria-label="Search" id="searchInput">
-                <button class="btn btn-outline-secondary" type="button" onclick="searchSkills()">Search</button>
-            </div>
-            <div class="row">
-                <div class="col-md-4">
+        <!-- Search Bar -->
+        <div class="input-group mb-4">
+            <input type="text" class="form-control" placeholder="Search for skills or people" aria-label="Search" id="searchInput">
+            <button class="btn btn-outline-secondary" type="button" onclick="searchSkills()">Search</button>
+        </div>
+
+        <div class="row">
+            <!-- Filters -->
+            <div class="col-md-3">
+                <h5>Filters</h5>
+                <div class="mb-3">
                     <label for="categoryFilter" class="form-label">Category</label>
                     <select class="form-select" id="categoryFilter" onchange="filterSkills()">
                         <option selected>All Categories</option>
@@ -59,9 +65,12 @@
                         <option value="Art">Art</option>
                         <option value="Music">Music</option>
                         <option value="Languages">Languages</option>
+                        <option value="Photography">Photography</option>
+                        <option value="Videography">Videography</option>
+                        <option value="Dancing">Dancing</option>
                     </select>
                 </div>
-                <div class="col-md-4">
+                <div class="mb-3">
                     <label for="levelFilter" class="form-label">Skill Level</label>
                     <select class="form-select" id="levelFilter" onchange="filterSkills()">
                         <option selected>All Levels</option>
@@ -70,7 +79,7 @@
                         <option value="Advanced">Advanced</option>
                     </select>
                 </div>
-                <div class="col-md-4">
+                <div class="mb-3">
                     <label for="availabilityFilter" class="form-label">Availability</label>
                     <select class="form-select" id="availabilityFilter" onchange="filterSkills()">
                         <option selected>All Times</option>
@@ -80,72 +89,165 @@
                     </select>
                 </div>
             </div>
-        </div>
 
-        <!-- Skill Cards -->
-        <div class="row" id="skillCards">
-            <div class="col-md-4 skill-card" data-category="Programming" data-level="Beginner" data-availability="Morning">
-                <div class="card text-light shadow-sm mb-4">
-                    <div class="card-body">
-                        <h5 class="card-title">Python Programming</h5>
-                        <span class="badge bg-primary">Programming</span>
-                        <span class="badge bg-secondary">Beginner</span>
-                        <p class="card-text">Learn Python from beginner to advanced level.</p>
-                        <div class="d-flex align-items-center">
-                            <img src="img/42907.jpg" alt="Jane Smith" class="rounded-circle me-2" style="width: 30px; height: 30px;">
-                            <span>Jane Smith</span>
+            <!-- Skill Cards -->
+            <div class="col-md-9">
+                <div class="row" id="skillCards">
+                    <div class="col-md-6 skill-card" data-category="Programming" data-level="Beginner" data-availability="Morning">
+                        <div class="card text-light shadow-sm mb-4">
+                            <div class="card-body">
+                                <h5 class="card-title">Python Programming</h5>
+                                <span class="badge bg-primary">Programming</span>
+                                <span class="badge bg-secondary">Beginner</span>
+                                <p class="card-text">Learn Python from beginner to advanced level.</p>
+                                <div class="d-flex align-items-center">
+                                    <img src="img/42907.jpg" alt="Jane Smith" class="rounded-circle me-2" style="width: 30px; height: 30px;">
+                                    <span>Jane Smith</span>
+                                </div>
+                                <button class="btn btn-primary mt-3" onclick="startChat('Jane Smith')">Start Chat</button>
+                            </div>
                         </div>
-                        <button class="btn btn-primary mt-3" onclick="startChat('Jane Smith')">Start Chat</button>
                     </div>
-                </div>
-            </div>
-            <div class="col-md-4 skill-card" data-category="Art" data-level="Intermediate" data-availability="Afternoon">
-                <div class="card text-light shadow-sm mb-4">
-                    <div class="card-body">
-                        <h5 class="card-title">Graphic Design</h5>
-                        <span class="badge bg-primary">Art</span>
-                        <span class="badge bg-secondary">Intermediate</span>
-                        <p class="card-text">Master Photoshop and Illustrator.</p>
-                        <div class="d-flex align-items-center">
-                            <img src="img/2151100279.jpg" alt="Mike Johnson" class="rounded-circle me-2" style="width: 30px; height: 30px;">
-                            <span>Mike Johnson</span>
+                    <div class="col-md-6 skill-card" data-category="Art" data-level="Intermediate" data-availability="Afternoon">
+                        <div class="card text-light shadow-sm mb-4">
+                            <div class="card-body">
+                                <h5 class="card-title">Graphic Design</h5>
+                                <span class="badge bg-primary">Art</span>
+                                <span class="badge bg-secondary">Intermediate</span>
+                                <p class="card-text">Master Photoshop and Illustrator.</p>
+                                <div class="d-flex align-items-center">
+                                    <img src="img/2151100279.jpg" alt="Mike Johnson" class="rounded-circle me-2" style="width: 30px; height: 30px;">
+                                    <span>Mike Johnson</span>
+                                </div>
+                                <button class="btn btn-primary mt-3" onclick="startChat('Mike Johnson')">Start Chat</button>
+                            </div>
                         </div>
-                        <button class="btn btn-primary mt-3" onclick="startChat('Mike Johnson')">Start Chat</button>
                     </div>
-                </div>
-            </div>
-            <div class="col-md-4 skill-card" data-category="Languages" data-level="Advanced" data-availability="Evening">
-                <div class="card text-light shadow-sm mb-4">
-                    <div class="card-body">
-                        <h5 class="card-title">Public Speaking</h5>
-                        <span class="badge bg-primary">Languages</span>
-                        <span class="badge bg-secondary">Advanced</span>
-                        <p class="card-text">Improve your public speaking skills.</p>
-                        <div class="d-flex align-items-center">
-                            <img src="img/42907.jpg" alt="Sarah Lee" class="rounded-circle me-2" style="width: 30px; height: 30px;">
-                            <span>Sarah Lee</span>
+                    <div class="col-md-6 skill-card" data-category="Languages" data-level="Advanced" data-availability="Evening">
+                        <div class="card text-light shadow-sm mb-4">
+                            <div class="card-body">
+                                <h5 class="card-title">Public Speaking</h5>
+                                <span class="badge bg-primary">Languages</span>
+                                <span class="badge bg-secondary">Advanced</span>
+                                <p class="card-text">Improve your public speaking skills.</p>
+                                <div class="d-flex align-items-center">
+                                    <img src="img/42907.jpg" alt="Sarah Lee" class="rounded-circle me-2" style="width: 30px; height: 30px;">
+                                    <span>Sarah Lee</span>
+                                </div>
+                                <button class="btn btn-primary mt-3" onclick="startChat('Sarah Lee')">Start Chat</button>
+                            </div>
                         </div>
-                        <button class="btn btn-primary mt-3" onclick="startChat('Sarah Lee')">Start Chat</button>
                     </div>
-                </div>
-            </div>
-            <!-- Add more skill cards as needed -->
-        </div>
+                    <div class="col-md-6 skill-card" data-category="Dancing" data-level="Beginner" data-availability="Morning">
+                        <div class="card text-light shadow-sm mb-4">
+                            <div class="card-body">
+                                <h5 class="card-title">Hip Hop Dancing</h5>
+                                <span class="badge bg-primary">Dancing</span>
+                                <span class="badge bg-secondary">Beginner</span>
+                                <p class="card-text">Learn the basics of hip hop dancing.</p>
+                                <div class="d-flex align-items-center">
+                                    <img src="img/42907.jpg" alt="John Doe" class="rounded-circle me-2" style="width: 30px; height: 30px;">
+                                    <span>John Doe</span>
+                                </div>
+                                <button class="btn btn-primary mt-3" onclick="startChat('John Doe')">Start Chat</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 skill-card" data-category="Videography" data-level="Intermediate" data-availability="Afternoon">
+                        <div class="card text-light shadow-sm mb-4">
+                            <div class="card-body">
+                                <h5 class="card-title">Videography</h5>
+                                <span class="badge bg-primary">Videography</span>
+                                <span class="badge bg-secondary">Intermediate</span>
+                                <p class="card-text">Learn how to shoot and edit videos.</p>
+                                <div class="d-flex align-items-center">
+                                    <img src="img/2151100279.jpg" alt="Jane Doe" class="rounded-circle me-2" style="width: 30px; height: 30px;">
+                                    <span>Jane Doe</span>
+                                </div>
+                                <button class="btn btn-primary mt-3" onclick="startChat('Jane Doe')">Start Chat</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 skill-card" data-category="Photography" data-level="Advanced" data-availability="Evening">
+                        <div class="card text-light shadow-sm mb-4">
+                            <div class="card-body">
+                                <h5 class="card-title">Photography</h5>
+                                <span class="badge bg-primary">Photography</span>
+                                <span class="badge bg-secondary">Advanced</span>
+                                <p class="card-text">Master the art of photography.</p>
+                                <div class="d-flex align-items-center">
+                                    <img src="img/42907.jpg" alt="Mike Smith" class="rounded-circle me-2" style="width: 30px; height: 30px;">
+                                    <span>Mike Smith</span>
+                                </div>
+                                <button class="btn btn-primary mt-3" onclick="startChat('Mike Smith')">Start Chat</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 skill-card" data-category="Languages" data-level="Beginner" data-availability="Morning">
+                        <div class="card text-light shadow-sm mb-4">
+                            <div class="card-body">
+                                <h5 class="card-title">Spanish Learning</h5>
+                                <span class="badge bg-primary">Languages</span>
+                                <span class="badge bg-secondary">Beginner</span>
+                                <p class="card-text">Learn the basics of Spanish.</p>
+                                <div class="d-flex align-items-center">
+                                    <img src="img/42907.jpg" alt="Maria Garcia" class="rounded-circle me-2" style="width: 30px; height: 30px;">
+                                    <span>Maria Garcia</span>
+                                </div>
+                                <button class="btn btn-primary mt-3" onclick="startChat('Maria Garcia')">Start Chat</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 skill-card" data-category="Languages" data-level="Intermediate" data-availability="Afternoon">
+                        <div class="card text-light shadow-sm mb-4">
+                            <div class="card-body">
+                                <h5 class="card-title">French Learning</h5>
+                                <span class="badge bg-primary">Languages</span>
+                                <span class="badge bg-secondary">Intermediate</span>
+                                <p class="card-text">Improve your French language skills.</p>
+                                <div class="d-flex align-items-center">
+                                    <img src="img/2151100279.jpg" alt="Pierre Dupont" class="rounded-circle me-2" style="width: 30px; height: 30px;">
+                                    <span>Pierre Dupont</span>
+                                </div>
+                                <button class="btn btn-primary mt-3" onclick="startChat('Pierre Dupont')">Start Chat</button>
+                            </div>
+                        </div>
+                    </div>
 
-        <!-- Pagination -->
-        <nav aria-label="Page navigation example">
-            <ul class="pagination justify-content-center">
-                <li class="page-item disabled">
-                    <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
-                </li>
-                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                <li class="page-item">
-                    <a class="page-link" href="#">Next</a>
-                </li>
-            </ul>
-        </nav>
+                    <div class="col-md-6 skill-card" data-category="Languages" data-level="Advanced" data-availability="Evening">
+                        <div class="card text-light shadow-sm mb-4">
+                            <div class="card-body">
+                                <h5 class="card-title">German Learning</h5>
+                                <span class="badge bg-primary">Languages</span>
+                                <span class="badge bg-secondary">Advanced</span>
+                                <p class="card-text">Master the German language.</p>
+                                <div class="d-flex align-items-center">
+                                    <img src="img/42907.jpg" alt="Hans Müller" class="rounded-circle me-2" style="width: 30px; height: 30px;">
+                                    <span>Hans Müller</span>
+                                </div>
+                                <button class="btn btn-primary mt-3" onclick="startChat('Hans Müller')">Start Chat</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Add more skill cards as needed -->
+                </div>
+
+                <!-- Pagination -->
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination justify-content-center">
+                        <li class="page-item disabled" id="prevPage">
+                            <a class="page-link" href="#" tabindex="-1" aria-disabled="true" onclick="changePage(-1)">Previous</a>
+                        </li>
+                        <li class="page-item"><a class="page-link" href="#" onclick="changePage(1)">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#" onclick="changePage(2)">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#" onclick="changePage(3)">3</a></li>
+                        <li class="page-item" id="nextPage">
+                            <a class="page-link" href="#" onclick="changePage(1)">Next</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
     </div>
 
     <!-- Footer -->
@@ -169,4 +271,5 @@
     <script src="./scripts/browse.js"></script>
 </body>
 </html>
+
 
