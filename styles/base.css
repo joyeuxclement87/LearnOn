@@ -80,14 +80,14 @@ body {
 }
 
 .social-btn {
-    background: white;
-    color: #444;
-    border: 1px solid #ddd;
-    padding: 0.625rem 1.25rem; /* decreased from 0.75rem 1.5rem */
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 0.625rem 1.25rem;
     border-radius: 0.25rem;
     font-weight: 500;
     font-size: 0.875rem;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -98,6 +98,23 @@ body {
 .social-btn:hover {
     background: var(--bg-primary);
     border-color: var(--primary);
+    color: var(--text-primary);
+}
+
+/* Add specific styles for each provider */
+.social-btn.google {
+    background: var(--bg-secondary);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.social-btn.facebook {
+    background: #1877F2;
+    border-color: #1877F2;
+}
+
+.social-btn.facebook:hover {
+    background: #0c64cf;
+    border-color: #0c64cf;
 }
 
 .divider {
