@@ -44,75 +44,77 @@
     </nav>
 
     <!-- Main Content -->
-    <div class="container-fluid my-5 pt-5">
-        <div class="row g-0">
+    <div class="container-fluid h-100 py-4 mt-5">
+        <div class="row g-0 h-100">
             <!-- Chat Sidebar -->
-            <div class="col-12 col-md-4 col-lg-3 chat-container-left">
-                <div class="chat-sidebar-header p-3">
-                    <div class="d-flex align-items-center justify-content-between mb-3">
-                        <h5 class="mb-0 fw-bold">Messages</h5>
-                        <div class="d-flex gap-2">
-                            <button class="btn btn-icon" title="Settings">
-                                <i class="bi bi-gear"></i>
-                            </button>
-                            <button class="btn btn-primary btn-sm rounded-circle" data-bs-toggle="modal" data-bs-target="#newChatModal">
-                                <i class="bi bi-plus-lg"></i>
-                            </button>
+            <div class="col-12 col-md-4 col-lg-3 h-100 overflow-hidden">
+                <div class="chat-sidebar d-flex flex-column h-100">
+                    <div class="chat-sidebar-header p-3">
+                        <div class="d-flex align-items-center justify-content-between mb-3">
+                            <h5 class="mb-0 fw-bold">Messages</h5>
+                            <div class="d-flex gap-2">
+                                <button class="btn btn-icon" title="Settings">
+                                    <i class="bi bi-gear"></i>
+                                </button>
+                                <button class="btn btn-icon btn-primary" title="New Conversation">
+                                    <i class="bi bi-plus-lg"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="search-box">
+                            <i class="bi bi-search search-icon"></i>
+                            <input type="text" class="form-control search-input" placeholder="Search conversations">
                         </div>
                     </div>
-                    <div class="search-box">
-                        <i class="bi bi-search search-icon"></i>
-                        <input type="text" class="form-control search-input" placeholder="Search conversations">
+
+                    <div class="chat-tabs px-3">
+                        <button class="chat-tab active">All</button>
+                        <button class="chat-tab">Unread</button>
+                        <button class="chat-tab">Important</button>
                     </div>
-                </div>
 
-                <div class="chat-tabs mb-3">
-                    <button class="chat-tab active">All</button>
-                    <button class="chat-tab">Unread</button>
-                    <button class="chat-tab">Important</button>
-                </div>
-
-                <div class="chat-contacts">
-                    <div class="nav flex-column chat-list" role="tablist">
-                        <!-- Active Chat -->
-                        <div class="chat-item active p-3" role="button">
-                            <div class="d-flex align-items-center">
-                                <div class="chat-avatar position-relative">
-                                    <img src="./img/alice.jpg" alt="Jane Smith" class="rounded-circle" width="50" height="50">
-                                    <span class="position-absolute bottom-0 end-0 bg-success rounded-circle p-1"
-                                        style="width: 12px; height: 12px;"></span>
-                                </div>
-                                <div class="ms-3 flex-grow-1">
-                                    <h6 class="mb-1">Jane Smith</h6>
-                                    <p class="mb-0 text-muted small">Thanks for the Python session!</p>
-                                    <small class="text-primary">2m ago</small>
+                    <div class="chat-contacts flex-grow-1 overflow-auto px-3">
+                        <div class="nav flex-column chat-list" role="tablist">
+                            <!-- Active Chat -->
+                            <div class="chat-item active p-3" role="button">
+                                <div class="d-flex align-items-center">
+                                    <div class="chat-avatar position-relative">
+                                        <img src="./img/alice.jpg" alt="Jane Smith" class="rounded-circle" width="50" height="50">
+                                        <span class="position-absolute bottom-0 end-0 bg-success rounded-circle p-1"
+                                            style="width: 12px; height: 12px;"></span>
+                                    </div>
+                                    <div class="ms-3 flex-grow-1">
+                                        <h6 class="mb-1">Jane Smith</h6>
+                                        <p class="mb-0 text-muted small">Thanks for the Python session!</p>
+                                        <small class="text-primary">2m ago</small>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <!-- Other Chats -->
-                        <div class="chat-item d-flex align-items-center">
-                            <img src="./img/cloude.jpg" alt="Mike Johnson" class="rounded-circle me-2" style="width: 40px; height: 40px;">
-                            <div>
-                                <span class="fw-bold">Mike Johnson</span>
-                                <p class="mb-0 text-muted">Last message snippet...</p>
-                                <small class="text-muted">9:30 AM</small>
+                            <!-- Other Chats -->
+                            <div class="chat-item d-flex align-items-center">
+                                <img src="./img/cloude.jpg" alt="Mike Johnson" class="rounded-circle me-2" style="width: 40px; height: 40px;">
+                                <div>
+                                    <span class="fw-bold">Mike Johnson</span>
+                                    <p class="mb-0 text-muted">Last message snippet...</p>
+                                    <small class="text-muted">9:30 AM</small>
+                                </div>
                             </div>
-                        </div>
-                        <div class="chat-item unread d-flex align-items-center">
-                            <img src="./img/jane.jpg" alt="Sarah Lee" class="rounded-circle me-2" style="width: 40px; height: 40px;">
-                            <div>
-                                <span class="fw-bold">Sarah Lee</span>
-                                <p class="mb-0 text-info">Last message snippet...</p>
-                                <small class="text-info">9:00 AM</small>
+                            <div class="chat-item unread d-flex align-items-center">
+                                <img src="./img/jane.jpg" alt="Sarah Lee" class="rounded-circle me-2" style="width: 40px; height: 40px;">
+                                <div>
+                                    <span class="fw-bold">Sarah Lee</span>
+                                    <p class="mb-0 text-info">Last message snippet...</p>
+                                    <small class="text-info">9:00 AM</small>
+                                </div>
                             </div>
-                        </div>
-                        <div class="chat-item d-flex align-items-center">
-                            <img src="./img/john.jpg" alt="John Doe" class="rounded-circle me-2" style="width: 40px; height: 40px;">
-                            <div>
-                                <span class="fw-bold">John Doe</span>
-                                <p class="mb-0 text-muted">Last message snippet...</p>
-                                <small class="text-muted">8:30 AM</small>
+                            <div class="chat-item d-flex align-items-center">
+                                <img src="./img/john.jpg" alt="John Doe" class="rounded-circle me-2" style="width: 40px; height: 40px;">
+                                <div>
+                                    <span class="fw-bold">John Doe</span>
+                                    <p class="mb-0 text-muted">Last message snippet...</p>
+                                    <small class="text-muted">8:30 AM</small>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -120,8 +122,8 @@
             </div>
 
             <!-- Chat Main -->
-            <div class="col-12 col-md-8 col-lg-9 chat-container-right">
-                <div class="chat-main">
+            <div class="col-12 col-md-8 col-lg-9 h-100">
+                <div class="chat-main d-flex flex-column h-100">
                     <!-- Chat Header -->
                     <div class="chat-header">
                         <div class="d-flex align-items-center">
@@ -150,7 +152,7 @@
                     </div>
 
                     <!-- Chat Messages -->
-                    <div class="chat-messages" id="chatMessagesContainer">
+                    <div class="chat-messages flex-grow-1 my-2" id="chatMessagesContainer">
                         <div class="message-date-divider">
                             <span>Today</span>
                         </div>
@@ -180,8 +182,8 @@
                                 <button class="btn btn-icon" title="Attach File">
                                     <i class="bi bi-paperclip"></i>
                                 </button>
-                                <button class="btn btn-primary send-btn" onclick="sendMessage()">
-                                    <i class="bi bi-send"></i>
+                                <button class="btn btn-icon send-btn" onclick="sendMessage()">
+                                    <i class="bi bi-send-fill"></i>
                                 </button>
                             </div>
                         </div>
@@ -208,23 +210,6 @@
             </div>
         </div>
     </div>
-
-    <!-- Footer -->
-    <footer class="bg-dark text-light text-center py-3 mt-5">
-        <div class="container">
-            <p class="mb-0">&copy; 2023 LearnOn. All rights reserved.</p>
-            <div class="mt-2">
-                <a href="#" class="text-light me-3">Privacy Policy</a>
-                <a href="#" class="text-light me-3">Terms of Service</a>
-                <a href="#" class="text-light">Contact Us</a>
-            </div>
-            <div class="mt-2">
-                <a href="#" class="text-light me-2"><i class="bi bi-facebook"></i></a>
-                <a href="#" class="text-light me-2"><i class="bi bi-twitter"></i></a>
-                <a href="#" class="text-light"><i class="bi bi-instagram"></i></a>
-            </div>
-        </div>
-    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="./scripts/chat.js"></script>
