@@ -508,7 +508,7 @@ html {
 
 .notification-time {
     font-size: 0.8rem;
-    color: var(--text-muted);
+    color: var (--text-muted);
 }
 
 .notification-actions {
@@ -549,4 +549,87 @@ html {
         margin-top: 1rem;
         justify-content: center;
     }
+}
+
+/* Welcome Section Styles */
+.welcome-section {
+    padding: 2rem 0;
+}
+
+.welcome-content {
+    padding-right: 2rem;
+}
+
+.stats-card {
+    padding: 1.5rem;
+    border-radius: 15px;
+    text-align: center;
+    color: var(--text-light);
+    transition: transform 0.3s ease;
+}
+
+.stats-card:hover {
+    transform: translateY(-5px);
+}
+
+.stats-card i {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.stats-card h3 {
+    font-size: 2rem;
+    margin: 0;
+    font-weight: 600;
+}
+
+.stats-card p {
+    margin: 0;
+    opacity: 0.8;
+}
+
+.bg-primary-gradient {
+    background: linear-gradient(45deg, var(--primary-color), #1e90ff);
+}
+
+.bg-success-gradient {
+    background: linear-gradient(45deg, #28a745, #34ce57);
+}
+
+.bg-info-gradient {
+    background: linear-gradient(45deg, #17a2b8, #20c997);
+}
+
+.bg-warning-gradient {
+    background: linear-gradient(45deg, #ffc107, #ffdb4d);
+}
+
+.quick-actions {
+    margin-top: 2rem;
+}
+
+.quick-actions .btn {
+    padding: 1rem 2rem;
+    border-radius: 10px;
+}
+
+.today-overview {
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.session-time {
+    min-width: 100px;
+    text-align: center;
+    border-radius: 10px !important;
+}
+
+.progress {
+    background-color: rgba(255,255,255,0.1);
+    border-radius: 10px;
+}
+
+.bg-darker {
+    background-color: var(--bg-darker);
+    box-shadow: 0 0 20px rgba(0,0,0,0.2);
 }

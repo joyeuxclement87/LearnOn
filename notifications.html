@@ -8,13 +8,102 @@
     <link rel="stylesheet" href="./styles/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initial counts
+            updateCounts();
+            
+            // Filter buttons
+            document.querySelectorAll('.notification-filters button').forEach(button => {
+                button.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    document.querySelectorAll('.notification-filters button').forEach(btn => {
+                        btn.classList.remove('active');
+                    });
+                    
+                    // Add active class to clicked button
+                    this.classList.add('active');
+                    
+                    // Filter notifications
+                    const filterType = this.getAttribute('data-filter');
+                    filterNotifications(filterType);
+                });
+            });
+
+            // Mark all as read button
+            document.getElementById('markAllRead').addEventListener('click', function() {
+                document.querySelectorAll('.notification-card.unread').forEach(card => {
+                    card.classList.remove('unread');
+                });
+                updateCounts();
+            });
+
+            // Dismiss buttons
+            document.querySelectorAll('.dismiss-btn').forEach(button => {
+                button.addEventListener('click', function() {
+                    const card = this.closest('.notification-card');
+                    card.style.opacity = '0';
+                    setTimeout(() => {
+                        card.remove();
+                        updateCounts();
+                    }, 300);
+                });
+            });
+        });
+
+        function filterNotifications(type) {
+            document.querySelectorAll('.notification-card').forEach(card => {
+                if (type === 'all' || card.getAttribute('data-type') === type) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        function updateCounts() {
+            // Update total count
+            const total = document.querySelectorAll('.notification-card').length;
+            document.querySelector('[data-filter="all"] .badge').textContent = total;
+
+            // Update category counts
+            ['messages', 'skills', 'sessions', 'feedback'].forEach(type => {
+                const count = document.querySelectorAll(`.notification-card[data-type="${type}"]`).length;
+                document.querySelector(`[data-filter="${type}"] .badge`).textContent = count;
+            });
+        }
+    </script>
 </head>
 <body class="bg-dark text-light">
     <!-- Navigation Bar -->
     <nav class="navbar navbar-expand-lg navbar-dark shadow-sm fixed-top">
         <div class="container">
             <a class="navbar-brand fw-bold" href="dashboard.html">LearnOn</a>
-            <!-- ...existing code... -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="dashboard.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Browseskill.html">Browse Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="messages.html">Messages</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="notifications.html">Notifications</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="profile.html">Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-danger" href="index.html">Logout</a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </nav>
 
