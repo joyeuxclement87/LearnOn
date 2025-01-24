@@ -244,15 +244,112 @@ function initializeBrowseListeners() {
 }
 
 function searchSkills() {
-    const searchInput = document.getElementById('searchInput').value.toLowerCase();
+    const searchInput = document.getElementById('searchInput');
+    const searchTerm = searchInput.value.toLowerCase();
+    const categoryFilter = document.getElementById('categoryFilter').value;
+    const levelFilter = document.getElementById('levelFilter').value;
+    const availabilityFilter = document.getElementById('availabilityFilter').value;
     const skillCards = document.querySelectorAll('.skill-card');
+    let hasResults = false;
+
     skillCards.forEach(card => {
-        const skillTitle = card.querySelector('.card-title').textContent.toLowerCase();
-        const skillDescription = card.querySelector('.card-text').textContent.toLowerCase();
-        const userName = card.querySelector('span').textContent.toLowerCase();
-        card.style.display = (skillTitle.includes(searchInput) || skillDescription.includes(searchInput) || userName.includes(searchInput)) ? 'block' : 'none';
+        const title = card.querySelector('.card-title').textContent.toLowerCase();
+        const category = card.dataset.category;
+        const level = card.dataset.level;
+        const availability = card.dataset.availability;
+        
+        const matchesSearch = title.includes(searchTerm);
+        const matchesCategory = categoryFilter === 'All Categories' || category === categoryFilter;
+        const matchesLevel = levelFilter === 'All Levels' || level === levelFilter;
+        const matchesAvailability = availabilityFilter === 'All Times' || availability === availabilityFilter;
+
+        if (matchesSearch && matchesCategory && matchesLevel && matchesAvailability) {
+            card.style.display = 'block';
+            hasResults = true;
+        } else {
+            card.style.display = 'none';
+        }
     });
+
+    // Show/hide no results message
+    document.getElementById('noResults').style.display = hasResults ? 'none' : 'block';
+    
+    // Show/hide clear button
+    document.querySelector('.search-clear').style.display = 
+        searchInput.value.length > 0 ? 'flex' : 'none';
 }
+
+function clearSearch() {
+    const searchInput = document.getElementById('searchInput');
+    searchInput.value = '';
+    document.querySelector('.search-clear').style.display = 'none';
+    
+    // Reset filters
+    document.getElementById('categoryFilter').value = 'All Categories';
+    document.getElementById('levelFilter').value = 'All Levels';
+    document.getElementById('availabilityFilter').value = 'All Times';
+    
+    // Show all cards
+    const skillCards = document.querySelectorAll('.skill-card');
+    skillCards.forEach(card => card.style.display = 'block');
+    
+    // Hide no results message
+    document.getElementById('noResults').style.display = 'none';
+    
+    // Focus on search input
+    searchInput.focus();
+}
+
+function searchTag(tag) {
+    const searchInput = document.getElementById('searchInput');
+    searchInput.value = tag;
+    searchSkills();
+    
+    // Scroll to results
+    document.getElementById('skillCards').scrollIntoView({ behavior: 'smooth' });
+}
+
+function toggleView(viewType) {
+    const skillCards = document.getElementById('skillCards');
+    const buttons = document.querySelectorAll('.view-toggle-btn');
+    
+    buttons.forEach(btn => btn.classList.remove('active'));
+    event.currentTarget.classList.add('active');
+    
+    if (viewType === 'list') {
+        skillCards.classList.remove('row');
+        document.querySelectorAll('.skill-card').forEach(card => {
+            card.classList.remove('col-md-6');
+            card.classList.add('col-12');
+        });
+    } else {
+        skillCards.classList.add('row');
+        document.querySelectorAll('.skill-card').forEach(card => {
+            card.classList.remove('col-12');
+            card.classList.add('col-md-6');
+        });
+    }
+}
+
+// Initialize search functionality when document loads
+document.addEventListener('DOMContentLoaded', function() {
+    const searchInput = document.getElementById('searchInput');
+    
+    // Add input event listener
+    searchInput.addEventListener('input', searchSkills);
+    
+    // Add keyup event listener for Enter key
+    searchInput.addEventListener('keyup', function(event) {
+        if (event.key === 'Enter') {
+            searchSkills();
+        }
+    });
+    
+    // Initialize filters
+    document.getElementById('categoryFilter').addEventListener('change', searchSkills);
+    document.getElementById('levelFilter').addEventListener('change', searchSkills);
+    document.getElementById('availabilityFilter').addEventListener('change', searchSkills);
+});
 
 function filterSkills() {
     const categoryFilter = document.getElementById('categoryFilter').value;
@@ -397,3 +494,16 @@ function initializeTestimonialSlider() {
 
 // Initialize landing page functions when DOM is loaded
 document.addEventListener('DOMContentLoaded', initializeLandingPage);
+
+document.addEventListener('DOMContentLoaded', function() {
+    const navbar = document.querySelector('.navbar');
+    
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    });
+});
+
