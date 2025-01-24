@@ -370,7 +370,7 @@ h1, h2, h4, .navbar-brand, .card-title {
 }
 
 .btn-outline-success {
-    color: var(--success-color);
+    color: var (--success-color);
     border-color: var (--success-color);
 }
 
@@ -1667,6 +1667,127 @@ chat-messages::-webkit-scrollbar-track,
     .contact-card {
         margin-bottom: 1.5rem;
     }
+}
+
+/* Dashboard Specific Styles */
+.dashboard-container {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.welcome-section {
+    margin-top: -20px;
+}
+
+.stats-card {
+    padding: 1.25rem;
+    height: 100%;
+    min-height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.stats-card i {
+    font-size: 1.75rem;
+    margin-bottom: 0.5rem;
+}
+
+.stats-card h3 {
+    font-size: 1.75rem;
+    margin-bottom: 0.25rem;
+}
+
+.stats-card p {
+    font-size: 0.875rem;
+    margin: 0;
+}
+
+.card {
+    margin-bottom: 1.25rem;
+}
+
+.card-body {
+    padding: 1.25rem;
+}
+
+.profile-card img {
+    max-height: 150px;
+    object-fit: cover;
+}
+
+.quick-actions .btn {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.95rem;
+}
+
+.activity-feed {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.activity-item {
+    padding: 0.75rem 1rem;
+}
+
+.activity-icon {
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1400px) {
+    .stats-card {
+        min-height: 100px;
+        padding: 1rem;
+    }
+
+    .stats-card i {
+        font-size: 1.5rem;
+    }
+
+    .stats-card h3 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .welcome-section {
+        margin-top: 0;
+    }
+
+    .stats-card {
+        min-height: 90px;
+    }
+}
+
+/* Profile Card Edit Button */
+.edit-profile-btn {
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: var(--primary-gradient);
+    border: 2px solid var(--text-light);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease;
+}
+
+.edit-profile-btn:hover {
+    transform: scale(1.1);
+}
+
+.edit-profile-btn i {
+    font-size: 14px;
 }
 
 
