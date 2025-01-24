@@ -3,94 +3,113 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register Form</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="./styles/reg.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <title>Register | LearnOn</title>
+    <link rel="stylesheet" href="./styles/auth.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <div class="container-fluid">
-        <div class="row shadow-lg rounded-3 overflow-hidden">
-            <div class="col-lg-6 bg-dark text-white p-4 ">
-                <h2 class="mb-4">Create an Account</h2>
-                <p class="mb-4">Please fill in the details below.</p>
-                <div class="step-container">
-                    <div class="step active" id="step1" onclick="showStep(1)">Step 1: Personal Details</div>
-                    <div class="step" id="step2" onclick="showStep(2)">Step 2: Account Details</div>
+    <div class="auth-container">
+        <div class="auth-banner">
+            <div class="banner-content">
+                <h2>Join Our Learning Community</h2>
+                <p>Create an account to access personalized learning paths and connect with other learners.</p>
+            </div>
+        </div>
+        <div class="auth-content">
+            <div class="auth-card glass-card">
+                <div class="auth-header">
+                    <h1>Create Account</h1>
+                    <p>Join us to start learning</p>
                 </div>
+
+                <div class="step-container">
+                    <div class="step active" id="step1" onclick="switchStep('personalDetails')">Personal</div>
+                    <div class="step" id="step2" onclick="switchStep('accountDetails')">Account</div>
+                </div>
+
                 <form id="registerForm">
-                    <div id="personalDetails">
-                        <div class="mb-3">
-                            <label for="fullName" class="form-label">Full Name</label>
-                            <input type="text" class="form-control" id="fullName" placeholder="Enter your full name" required>
+                    <div id="personalDetails" class="form-section">
+                        <div class="form-group">
+                            <label class="form-label">Full Name</label>
+                            <input type="text" class="form-control">
                         </div>
-                        <div class="mb-3">
-                            <label for="dob" class="form-label">Date of Birth</label>
-                            <input type="date" class="form-control" id="dob" required>
+
+                        <div class="form-group">
+                            <label class="form-label">Date of Birth</label>
+                            <input type="date" class="form-control">
                         </div>
-                        <div class="mb-3">
-                            <label for="country" class="form-label">Country</label>
-                            <input type="text" class="form-control" id="country" placeholder="Enter your country" required>
+
+                        <div class="form-group">
+                            <label class="form-label">Country</label>
+                            <input type="text" class="form-control">
                         </div>
-                        <button type="button" class="btn btn-primary w-100 mb-3" id="nextBtn">Next</button>
+
+                        <button type="button" class="btn-primary w-full" onclick="switchStep('accountDetails')">Continue</button>
                     </div>
-                    <div id="accountDetails" class="hidden">
-                        <div class="mb-3">
-                            <label for="username" class="form-label">Username</label>
-                            <input type="text" class="form-control" id="username" placeholder="Enter your username" required>
+
+                    <div id="accountDetails" class="form-section hidden">
+                        <div class="form-group">
+                            <label class="form-label">Username</label>
+                            <input type="text" class="form-control">
                         </div>
-                        <div class="mb-3">
-                            <label for="email" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+
+                        <div class="form-group">
+                            <label class="form-label">Email</label>
+                            <input type="email" class="form-control">
                         </div>
-                        <div class="mb-3">
-                            <label for="password" class="form-label">Password</label>
-                            <input type="password" class="form-control" id="password" placeholder="Enter your password" required>
+
+                        <div class="form-group">
+                            <label class="form-label">Password</label>
+                            <input type="password" class="form-control">
                         </div>
-                        <button type="submit" class="btn btn-primary w-100 mb-3">Register</button>
+
+                        <button type="submit" class="btn-primary w-full">Create Account</button>
                     </div>
                 </form>
-                <div class="text-center mb-3">
-                    <span>or continue with</span>
+
+                <div class="divider">or continue with</div>
+
+                <div class="social-buttons">
+                    <button type="button" class="social-btn w-full mb-2">
+                        <i class="fab fa-google"></i>
+                        <span>Continue with Google</span>
+                    </button>
+                    <button type="button" class="social-btn w-full">
+                        <i class="fab fa-facebook"></i>
+                        <span>Continue with Facebook</span>
+                    </button>
                 </div>
-                <div class="d-flex justify-content-center mb-4">
-                    <button class="btn btn-outline-primary me-2"><i class="fab fa-google"></i> Google</button>
-                    <button class="btn btn-outline-primary"><i class="fab fa-facebook-f"></i> Facebook</button>
-                </div>
-                <p class="mt-4 text-center">Already have an account? <a href="login.html" class="text-decoration-none">Sign In</a></p>
-                <p class="mt-4 text-center"><a href="index.html" class="text-decoration-none">Back to Home</a></p>
-            </div>
-            <div class="col-lg-6 d-none d-lg-block">
-                <div class="image-container"></div>
+
+                <p class="text-center mt-4">
+                    Already have an account? 
+                    <a href="login.html" class="link-primary">Sign in</a>
+                </p>
             </div>
         </div>
     </div>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-    <script src="scripts/register.js"></script>
     <script>
-        function showStep(step) {
-            if (step === 1) {
-                document.getElementById('personalDetails').classList.remove('hidden');
-                document.getElementById('accountDetails').classList.add('hidden');
-                document.getElementById('step1').classList.add('active');
-                document.getElementById('step2').classList.remove('active');
-            } else if (step === 2) {
-                document.getElementById('personalDetails').classList.add('hidden');
-                document.getElementById('accountDetails').classList.remove('hidden');
-                document.getElementById('step1').classList.remove('active');
-                document.getElementById('step2').classList.add('active');
-            }
+        function switchStep(stepId) {
+            const sections = ['personalDetails', 'accountDetails'];
+            sections.forEach((section, index) => {
+                const elem = document.getElementById(section);
+                const step = document.getElementById(`step${index + 1}`);
+                
+                if (section === stepId) {
+                    elem.classList.remove('hidden');
+                    step.classList.add('active');
+                } else {
+                    elem.classList.add('hidden');
+                    step.classList.remove('active');
+                }
+            });
         }
 
-        document.getElementById('nextBtn').addEventListener('click', function() {
-            showStep(2);
+        document.getElementById('registerForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            window.location.href = '/dashboard.html';
         });
     </script>
+    <script src="./scripts/auth.js"></script>
 </body>
 </html>
