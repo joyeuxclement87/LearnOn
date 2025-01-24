@@ -295,3 +295,79 @@ function initializeDashboardListeners() {
         }
     });
 }
+
+// Landing Page Functions
+function initializeLandingPage() {
+    initializeSmoothScrolling();
+    initializeScrollToTop();
+    initializeNavbarScroll();
+    initializeCounters();
+    initializeImageLoading();
+}
+
+function initializeSmoothScrolling() {
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+}
+
+function initializeScrollToTop() {
+    const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+    if (scrollToTopBtn) {
+        window.addEventListener('scroll', () => {
+            scrollToTopBtn.style.display = window.scrollY > 300 ? 'block' : 'none';
+        });
+        scrollToTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    }
+}
+
+function initializeNavbarScroll() {
+    window.addEventListener('scroll', function() {
+        const navbar = document.querySelector('.custom-navbar');
+        if (navbar) {
+            navbar.classList.toggle('navbar-scrolled', window.scrollY > 50);
+        }
+    });
+}
+
+function initializeCounters() {
+    const counters = document.querySelectorAll('.stat strong');
+    counters.forEach(counter => {
+        const updateCount = () => {
+            const target = +counter.getAttribute('data-count');
+            const count = +counter.innerText;
+            const increment = target / 200;
+
+            if (count < target) {
+                counter.innerText = Math.ceil(count + increment);
+                setTimeout(updateCount, 10);
+            } else {
+                counter.innerText = target;
+            }
+        };
+        updateCount();
+    });
+}
+
+function initializeImageLoading() {
+    const images = document.querySelectorAll('img');
+    images.forEach(img => {
+
+        img.addEventListener('load', function() {
+            const loader = this.closest('.img-loader');
+            if (loader) {
+                loader.classList.remove('img-loader');
+            }
+        });
+    });
+}
+
+// Initialize landing page functions when DOM is loaded
+document.addEventListener('DOMContentLoaded', initializeLandingPage);

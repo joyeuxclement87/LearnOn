@@ -207,48 +207,124 @@
         <div class="row">
             <!-- Sidebar -->
             <div class="col-12 col-md-3">
-                <div class="card text-light shadow-sm mb-4">
-                    <img src="./img/42907.jpg" class="card-img-top" alt="Profile Picture">
+                <!-- Profile Card -->
+                <div class="card bg-darker text-light shadow-sm mb-4">
+                    <div class="position-relative">
+                        <img src="./img/42907.jpg" class="card-img-top" alt="Profile Picture">
+                        <span class="position-absolute bottom-0 end-0 p-2">
+                            <button class="btn btn-sm btn-primary rounded-circle">
+                                <i class="bi bi-pencil"></i>
+                            </button>
+                        </span>
+                    </div>
                     <div class="card-body text-center">
-                        <h5 class="card-title">John Doe</h5>
-                        <p class="card-text text-muted">user@example.com</p>
-                        <p class="card-text">"Lifelong learner and teacher."</p>
-                        <button class="btn btn-outline-primary btn-sm w-100">Change Picture</button>
+                        <h5 class="card-title mb-1">John Doe</h5>
+                        <p class="text-muted small mb-2">@johndoe</p>
+                        <div class="d-flex justify-content-center gap-2 mb-3">
+                            <span class="badge bg-primary">Python Expert</span>
+                            <span class="badge bg-secondary">Design Enthusiast</span>
+                        </div>
+                        <div class="row g-2 mb-3">
+                            <div class="col-4">
+                                <div class="p-2 bg-dark rounded">
+                                    <h6 class="mb-0">56</h6>
+                                    <small class="text-muted">Students</small>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="p-2 bg-dark rounded">
+                                    <h6 class="mb-0">12</h6>
+                                    <small class="text-muted">Skills</small>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="p-2 bg-dark rounded">
+                                    <h6 class="mb-0">4.9</h6>
+                                    <small class="text-muted">Rating</small>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Quick Links -->
-                <div class="card text-light shadow-sm mb-4">
+                <!-- Quick Actions -->
+                <div class="card bg-darker text-light shadow-sm mb-4">
                     <div class="card-body">
-                        <h5 class="card-title">Quick Links</h5>
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item text-light">
-                                <a href="#" class="text-decoration-none text-light">New Skill Post</a>
-                            </li>
-                            <li class="list-group-item text-light">
-                                <a href="#" class="text-decoration-none text-light">My Skills</a>
-                            </li>
-                            <li class="list-group-item text-light">
-                                <a href="#" class="text-decoration-none text-light">Settings</a>
-                            </li>
-                        </ul>
+                        <h6 class="card-title d-flex align-items-center mb-3">
+                            <i class="bi bi-lightning-charge-fill me-2"></i>
+                            Quick Actions
+                        </h6>
+                        <div class="d-grid gap-2">
+                            <button class="btn btn-primary btn-sm">
+                                <i class="bi bi-plus-circle me-2"></i>Create New Skill Post
+                            </button>
+                            <button class="btn btn-outline-primary btn-sm">
+                                <i class="bi bi-search me-2"></i>Find Learning Partners
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Learning Progress -->
+                <div class="card bg-darker text-light shadow-sm mb-4">
+                    <div class="card-body">
+                        <h6 class="card-title d-flex align-items-center mb-3">
+                            <i class="bi bi-graph-up me-2"></i>
+                            Learning Progress
+                        </h6>
+                        <div class="mb-3">
+                            <div class="d-flex justify-content-between align-items-center mb-1">
+                                <small>Python Advanced Course</small>
+                                <small class="text-muted">75%</small>
+                            </div>
+                            <div class="progress bg-dark" style="height: 6px;">
+                                <div class="progress-bar bg-primary" style="width: 75%"></div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <div class="d-flex justify-content-between align-items-center mb-1">
+                                <small>UI/UX Design Basics</small>
+                                <small class="text-muted">45%</small>
+                            </div>
+                            <div class="progress bg-dark" style="height: 6px;">
+                                <div class="progress-bar bg-info" style="width: 45%"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Upcoming Sessions -->
-                <div class="card text-light shadow-sm">
+                <div class="card bg-darker text-light shadow-sm mb-4">
                     <div class="card-body">
-                        <h5 class="card-title">Upcoming Sessions</h5>
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item text-light">
-                                Python Programming with Jane Smith
-                                <small class="text-muted d-block">2023-10-15, 10:00 AM</small>
-                            </li>
-                            <li class="list-group-item text-light">
-                                Graphic Design with Mike Johnson
-                                <small class="text-muted d-block">2023-10-20, 2:00 PM</small>
-                            </li>
-                        </ul>
+                        <h6 class="card-title d-flex align-items-center mb-3">
+                            <i class="bi bi-calendar-event me-2"></i>
+                            Upcoming Sessions
+                        </h6>
+                        <div class="upcoming-session mb-3">
+                            <div class="d-flex align-items-center gap-2">
+                                <div class="bg-primary text-light rounded p-2 text-center" style="min-width: 60px;">
+                                    <small class="d-block">TODAY</small>
+                                    <strong>10:00</strong>
+                                </div>
+                                <div>
+                                    <h6 class="mb-1">Python Programming</h6>
+                                    <small class="text-muted">with Jane Smith</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="upcoming-session mb-3">
+                            <div class="d-flex align-items-center gap-2">
+                                <div class="bg-secondary text-light rounded p-2 text-center" style="min-width: 60px;">
+                                    <small class="d-block">TUE</small>
+                                    <strong>14:30</strong>
+                                </div>
+                                <div>
+                                    <h6 class="mb-1">Graphic Design</h6>
+                                    <small class="text-muted">with Mike Johnson</small>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="btn btn-link btn-sm text-primary w-100">View All Sessions</button>
                     </div>
                 </div>
             </div>

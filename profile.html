@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./styles/styles.css">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
 </head>
 <body class="bg-dark text-light">
     <!-- Header -->
@@ -45,88 +46,163 @@
 
     <!-- Main Content -->
     <div class="container-fluid my-5 pt-5">
-        <!-- Profile Summary -->
-        <div class="profile-summary">
-            <img src="img/42907.jpg" alt="Profile Picture">
-            <h2>John Doe</h2>
-            <p>"Lifelong learner and teacher."</p>
-            <button class="btn btn-outline-primary">Edit Profile</button>
-        </div>
-
-        <!-- Skills Section -->
-        <div class="skills-section">
-            <h3>Skills I Offer</h3>
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="skill-card">
-                        <h5>Python Programming</h5>
-                        <span class="badge">Programming</span>
-                        <button class="btn btn-outline-secondary btn-sm">Edit</button>
-                        <button class="btn btn-outline-danger btn-sm">Delete</button>
+        <!-- Profile Hero Section -->
+        <div class="profile-hero bg-darker rounded-3 p-4 mb-4">
+            <div class="row align-items-center">
+                <div class="col-md-3 text-center">
+                    <div class="position-relative d-inline-block">
+                        <img src="img/42907.jpg" alt="Profile Picture" class="rounded-circle img-fluid mb-3" style="width: 200px; height: 200px; object-fit: cover;">
+                        <span class="position-absolute bottom-0 end-0 bg-success rounded-circle p-2 border border-dark"></span>
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <div class="skill-card">
-                        <h5>Graphic Design</h5>
-                        <span class="badge">Art</span>
-                        <button class="btn btn-outline-secondary btn-sm">Edit</button>
-                        <button class="btn btn-outline-danger btn-sm">Delete</button>
+                    <h2 class="mb-2">John Doe</h2>
+                    <p class="text-muted mb-3"><i class="bi bi-geo-alt-fill"></i> New York, USA</p>
+                    <p class="mb-3">"Passionate about teaching and learning new skills. Expert in Python and Graphic Design."</p>
+                    <div class="d-flex gap-2">
+                        <button class="btn btn-primary"><i class="bi bi-pencil-square"></i> Edit Profile</button>
+                        <button class="btn btn-outline-primary"><i class="bi bi-share"></i> Share Profile</button>
                     </div>
                 </div>
-                <!-- Add more skill cards as needed -->
+                <div class="col-md-3">
+                    <div class="stats-grid">
+                        <div class="stat-item text-center p-3 rounded bg-dark">
+                            <h3 class="mb-1">128</h3>
+                            <small class="text-muted">Hours Taught</small>
+                        </div>
+                        <div class="stat-item text-center p-3 rounded bg-dark">
+                            <h3 class="mb-1">4.9</h3>
+                            <small class="text-muted">Rating</small>
+                        </div>
+                        <div class="stat-item text-center p-3 rounded bg-dark">
+                            <h3 class="mb-1">56</h3>
+                            <small class="text-muted">Students</small>
+                        </div>
+                        <div class="stat-item text-center p-3 rounded bg-dark">
+                            <h3 class="mb-1">12</h3>
+                            <small class="text-muted">Skills</small>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <div class="skills-section">
-            <h3>Skills I Want to Learn</h3>
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="skill-card">
-                        <h5>Public Speaking</h5>
-                        <span class="badge">Languages</span>
-                        <button class="btn btn-outline-secondary btn-sm">Edit</button>
-                        <button class="btn btn-outline-danger btn-sm">Delete</button>
+        <!-- Content Tabs -->
+        <ul class="nav nav-tabs mb-4" id="profileTabs" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" id="skills-tab" data-bs-toggle="tab" href="#skills">Skills & Expertise</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="activity-tab" data-bs-toggle="tab" href="#activity">Activity</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="connections-tab" data-bs-toggle="tab" href="#connections">Connections</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="reviews-tab" data-bs-toggle="tab" href="#reviews">Reviews</a>
+            </li>
+        </ul>
+
+        <div class="tab-content" id="profileTabContent">
+            <!-- Skills Tab -->
+            <div class="tab-pane fade show active" id="skills">
+                <div class="row">
+                    <div class="col-md-6 mb-4">
+                        <div class="card bg-darker">
+                            <div class="card-header d-flex justify-content-between align-items-center">
+                                <h5 class="mb-0">Skills I Offer</h5>
+                                <button class="btn btn-sm btn-primary"><i class="bi bi-plus-lg"></i> Add Skill</button>
+                            </div>
+                            <div class="card-body">
+                                <div class="skill-item mb-3">
+                                    <div class="d-flex justify-content-between align-items-center mb-1">
+                                        <span>Python Programming</span>
+                                        <span class="badge bg-primary">Advanced</span>
+                                    </div>
+                                    <div class="progress bg-dark">
+                                        <div class="progress-bar" style="width: 90%"></div>
+                                    </div>
+                                </div>
+                                <!-- More skills... -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <div class="card bg-darker">
+                            <div class="card-header d-flex justify-content-between align-items-center">
+                                <h5 class="mb-0">Learning Goals</h5>
+                                <button class="btn btn-sm btn-primary"><i class="bi bi-plus-lg"></i> Add Goal</button>
+                            </div>
+                            <div class="card-body">
+                                <div class="skill-item mb-3">
+                                    <div class="d-flex justify-content-between align-items-center mb-1">
+                                        <span>Public Speaking</span>
+                                        <span class="badge bg-secondary">In Progress</span>
+                                    </div>
+                                    <div class="progress bg-dark">
+                                        <div class="progress-bar bg-info" style="width: 45%"></div>
+                                    </div>
+                                </div>
+                                <!-- More learning goals... -->
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-6">
-                    <div class="skill-card">
-                        <h5>Photography</h5>
-                        <span class="badge">Photography</span>
-                        <button class="btn btn-outline-secondary btn-sm">Edit</button>
-                        <button class="btn btn-outline-danger btn-sm">Delete</button>
+            </div>
+
+            <!-- Activity Tab -->
+            <div class="tab-pane fade" id="activity">
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-marker bg-primary"></div>
+                        <div class="timeline-content bg-darker p-3 rounded">
+                            <small class="text-muted">Today, 10:30 AM</small>
+                            <p class="mb-0">Completed Python tutorial session with Sarah</p>
+                        </div>
+                    </div>
+                    <!-- More timeline items... -->
+                </div>
+            </div>
+
+            <!-- Connections Tab -->
+            <div class="tab-pane fade" id="connections">
+                <div class="row g-3">
+                    <div class="col-md-3">
+                        <div class="card bg-darker">
+                            <img src="img/42907.jpg" class="card-img-top" alt="Connection">
+                            <div class="card-body text-center">
+                                <h5 class="card-title mb-1">Jane Smith</h5>
+                                <p class="text-muted small">Graphic Designer</p>
+                                <button class="btn btn-sm btn-primary w-100">Message</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- More connection cards... -->
+                </div>
+            </div>
+
+            <!-- Reviews Tab -->
+            <div class="tab-pane fade" id="reviews">
+                <div class="card bg-darker mb-3">
+                    <div class="card-body">
+                        <div class="d-flex mb-3">
+                            <img src="img/42907.jpg" class="rounded-circle me-3" width="48" height="48" alt="Reviewer">
+                            <div>
+                                <h6 class="mb-1">Sarah Johnson</h6>
+                                <div class="text-warning mb-2">
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                </div>
+                                <p class="mb-0">Excellent Python instructor! Very patient and knowledgeable.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <!-- Add more skill cards as needed -->
+                <!-- More reviews... -->
             </div>
-        </div>
-
-        <!-- Activity Section -->
-        <div class="activity-section">
-            <h3>Recent Activity</h3>
-            <div class="activity-item list-group-item">
-                <p>You completed a session with Jane Smith</p>
-                <small class="text-muted">10:00 AM</small>
-            </div>
-            <div class="activity-item list-group-item">
-                <p>Mike Johnson sent you a message</p>
-                <small class="text-muted">9:30 AM</small>
-            </div>
-            <!-- Add more activity items as needed -->
-        </div>
-
-        <!-- Connections Section -->
-
-        <div class="connections-section">
-            <h3>Connections</h3>
-            <div class="connection-item d-flex align-items-center">
-                <img src="img/42907.jpg" alt="Jane Smith" class="rounded-circle me-2" style="width: 40px; height: 40px;">
-                <div>
-                    <span class="fw-bold">Jane Smith</span>
-                    <p class="mb-0">Graphic Designer</p>
-                </div>
-                <button class="btn btn-outline-danger btn-sm ms-auto">Remove</button>
-            </div>
-            <!-- Add more connection items as needed -->
         </div>
     </div>
 
