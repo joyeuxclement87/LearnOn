@@ -1,5 +1,7 @@
+@import url('./styles.css');
+
 body {
-    background-color: #cdcdcd;
+    background-color: var(--bg-dark);
     font-family: 'Roboto', sans-serif;
 }
 
@@ -13,28 +15,34 @@ body {
 
 form .form-control {
     border-radius: 8px;
-    border: 1px solid #ccc;
+    border: 1px solid var(--text-muted);
     padding: 10px;
     font-size: 14px;
+    background-color: var(--bg-darker);
+    color: var(--text-light);
+}
+
+form .form-control::placeholder {
+    color: var(--text-muted);
 }
 
 form .btn-primary {
-    background-color: #2a52be;
-    border-color: #2a52be;
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
     border-radius: 8px;
     font-size: 16px;
     padding: 10px;
 }
 
 form .btn-primary:hover {
-    background-color: #1a3b92;
-    border-color: #1a3b92;
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
 }
 
 h2 {
     font-family: 'Poppins', sans-serif;
     font-weight: bold;
-    color: #333;
+    color: var(--text-light);
 }
 
 .container-fluid {
@@ -47,7 +55,8 @@ h2 {
 .row {
     max-width: 800px; /* Reduce the maximum width */
     width: 100%;
-    background-color: #fff;
+
+    background-color: var(--bg-darker);
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     margin: 0 20px; /* Add margin to both sides */
@@ -59,10 +68,11 @@ h2 {
 
 .bg-light {
     padding: 40px; /* Reduce the padding */
+    background-color: var(--bg-darker);
 }
 
 .text-center a {
-    color: #2a52be;
+    color: var(--primary-color);
 }
 
 .text-center a:hover {
@@ -74,6 +84,13 @@ h2 {
     font-size: 16px;
     padding: 10px;
     width: 150px;
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--primary-color);
+    color: var(--text-light);
 }
 
 .btn-outline-primary i {

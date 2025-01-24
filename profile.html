@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - LearnOn</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./styles/styles.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+        }
+        .navbar {
+            background-color: var(--bg-darker);
+        }
+        .navbar-brand, .nav-link {
+            color: var(--text-light) !important;
+        }
+        .nav-link:hover {
+            color: var(--primary-color) !important;
+        }
+        .profile-summary {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .profile-summary img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-bottom: 1rem;
+        }
+        .profile-summary h2 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        .profile-summary p {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+        .skills-section, .activity-section, .connections-section {
+            margin-bottom: 2rem;
+        }
+        .skills-section h3, .activity-section h3, .connections-section h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        .skill-card, .activity-item, .connection-item {
+            background-color: var(--bg-darker);
+            border: 1px solid #444;
+            margin-bottom: 1rem;
+            padding: 1rem;
+            border-radius: 10px;
+        }
+        .skill-card .btn, .activity-item .btn, .connection-item .btn {
+            margin-left: 0.5rem;
+        }
+        .container-fluid {
+            padding: 1rem;
+            margin-bottom: 2rem;
+        }
+        .badge {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+        }
+        .btn-outline-secondary {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+        }
+        .btn-outline-secondary:hover {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+        }
+        .btn-outline-danger {
+            border-color: var(--secondary-color);
+            color: var(--secondary-color);
+        }
+        .btn-outline-danger:hover {
+            background-color: var(--secondary-color);
+            color: var(--text-light);
+        }
+        .list-group-item {
+            background-color: var(--bg-darker);
+            color: var(--text-light);
+        }
+        .list-group-item .text-muted {
+            color: var(--text-muted);
+        }
+    </style>
+</head>
+<body class="bg-dark text-light">
+    <!-- Header -->
+
+    <nav class="navbar navbar-expand-lg navbar-dark shadow-sm fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="dashboard.html">LearnOn</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="dashboard.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Browseskill.html">Browse Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="messages.html">Messages</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="notifications.html">Notifications</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="profile.html">Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-danger" href="index.html">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container-fluid my-5 pt-5">
+        <!-- Profile Summary -->
+        <div class="profile-summary">
+            <img src="img/42907.jpg" alt="Profile Picture">
+            <h2>John Doe</h2>
+            <p>"Lifelong learner and teacher."</p>
+            <button class="btn btn-outline-primary">Edit Profile</button>
+        </div>
+
+        <!-- Skills Section -->
+        <div class="skills-section">
+            <h3>Skills I Offer</h3>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="skill-card">
+                        <h5>Python Programming</h5>
+                        <span class="badge">Programming</span>
+                        <button class="btn btn-outline-secondary btn-sm">Edit</button>
+                        <button class="btn btn-outline-danger btn-sm">Delete</button>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="skill-card">
+                        <h5>Graphic Design</h5>
+                        <span class="badge">Art</span>
+                        <button class="btn btn-outline-secondary btn-sm">Edit</button>
+                        <button class="btn btn-outline-danger btn-sm">Delete</button>
+                    </div>
+                </div>
+                <!-- Add more skill cards as needed -->
+            </div>
+        </div>
+
+        <div class="skills-section">
+            <h3>Skills I Want to Learn</h3>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="skill-card">
+                        <h5>Public Speaking</h5>
+                        <span class="badge">Languages</span>
+                        <button class="btn btn-outline-secondary btn-sm">Edit</button>
+                        <button class="btn btn-outline-danger btn-sm">Delete</button>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="skill-card">
+                        <h5>Photography</h5>
+                        <span class="badge">Photography</span>
+                        <button class="btn btn-outline-secondary btn-sm">Edit</button>
+                        <button class="btn btn-outline-danger btn-sm">Delete</button>
+                    </div>
+                </div>
+                <!-- Add more skill cards as needed -->
+            </div>
+        </div>
+
+        <!-- Activity Section -->
+        <div class="activity-section">
+            <h3>Recent Activity</h3>
+            <div class="activity-item list-group-item">
+                <p>You completed a session with Jane Smith</p>
+                <small class="text-muted">10:00 AM</small>
+            </div>
+            <div class="activity-item list-group-item">
+                <p>Mike Johnson sent you a message</p>
+                <small class="text-muted">9:30 AM</small>
+            </div>
+            <!-- Add more activity items as needed -->
+        </div>
+
+        <!-- Connections Section -->
+
+        <div class="connections-section">
+            <h3>Connections</h3>
+            <div class="connection-item d-flex align-items-center">
+                <img src="img/42907.jpg" alt="Jane Smith" class="rounded-circle me-2" style="
+

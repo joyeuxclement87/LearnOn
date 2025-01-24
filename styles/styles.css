@@ -1,45 +1,77 @@
+/* CSS Variables for Theme */
+:root {
+    --bg-dark: #121212;
+    --bg-darker: #1f1f1f;
+    --primary-color: #ff4081;
+    --secondary-color: #e91e63;
+    --text-light: #ffffff;
+    --text-muted: #b0b0b0;
+    --text-dark: #121212; /* Dark mode text color */
+    --bg-light: #ffffff; /* Light mode background */
+    --primary-light: #ff80ab; /* Lighter primary color */
+}
+
+/* Global Styles */
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: #f0f2f5; /* Light grey background */
-    color: #333; /* Dark grey text color */
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-dark);
+    color: var(--text-light);
 }
 
 h1, h2, h4, .navbar-brand, .card-title {
     font-family: 'Poppins', sans-serif;
-    color: #333; /* Dark grey text color */
+    color: var(--text-light);
 }
 
 .hero-section h1 {
     font-family: 'Poppins', sans-serif;
     font-weight: 700;
-    color: #333; /* Dark grey text color */
+    color: var(--text-light);
 }
 
-.bg-dark-green {
-    background-color: #2c3e50; /* Dark blue background */
-    color: white;
+/* Utility Classes */
+.bg-dark {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
 }
 
+.bg-darker {
+    background-color: var(--bg-darker);
+    color: var(--text-muted);
+}
+
+.p-2 {
+    padding: 2rem;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* Navbar Styles */
 .custom-navbar {
-    height: 70px; /* Adjust this value to make the navbar longer */
+    height: 70px;
     transition: background-color 0.3s, box-shadow 0.3s;
 }
 
 .custom-navbar.navbar-scrolled {
-    background-color: rgba(44, 62, 80, 0.8); /* Translucent dark blue background */
+    background-color: rgba(31, 31, 31, 0.8);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(10px); /* Add blur effect */
+    backdrop-filter: blur(10px);
 }
 
 .nav-link {
-    color: white;
+    color: var(--text-light);
     transition: color 0.3s;
 }
 
 .nav-link:hover {
-    color: #e74c3c; /* Red color on hover */
+    color: var(--primary-color);
 }
 
+/* Hero Section */
 .hero-section {
     background: url('../img/iv.jpg') no-repeat center center/cover;
     height: 100vh;
@@ -53,7 +85,7 @@ h1, h2, h4, .navbar-brand, .card-title {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Adjust the overlay color and opacity */
+    background: rgba(0, 0, 0, 0.5);
 }
 
 .hero-section .container {
@@ -62,189 +94,286 @@ h1, h2, h4, .navbar-brand, .card-title {
 }
 
 .hero-section h1, .hero-section p {
-    color: white;
+    color: var(--text-light);
 }
 
-#about {
-    background-color: #ecf0f1; /* Light grey background */
-    color: #333; /* Dark grey text color */
+/* Section Styles */
+.section {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    padding: 2rem;
+    margin-bottom: 2rem;
 }
 
-#about h1 {
+/* Features Section */
+#features {
+    background-color: var(--bg-darker);
+    color: var(--text-light);
+}
+
+/* FAQs Section */
+#faqs {
+    background-color: var(--bg-darker);
+    color: var(--text-light);
+}
+
+#faqs .accordion-button {
+    background-color: var(--bg-darker);
+    color: var(--text-light);
+}
+
+#faqs .accordion-button:not(.collapsed) {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+}
+
+#faqs .accordion-body {
+    background-color: var(--bg-darker);
+    color: var(--text-light);
+}
+
+/* Contact Section */
+#contact {
+    background-color: var(--bg-darker);
+    color: var(--text-light);
+}
+
+#contact input, #contact textarea {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    border: 1px solid var(--text-muted);
+}
+
+#contact input::placeholder, #contact textarea::placeholder {
+    color: var(--text-muted);
+}
+
+.section h1, .section h2 {
     font-size: 2.5rem;
     margin-bottom: 1rem;
 }
 
-#about p {
-    font-size: 1.1rem;
-    line-height: 1.6;
-}
-
-#about img {
+/* Card Styles */
+.card {
     border-radius: 10px;
-    margin-top: 1rem;
+    background-color: var(--bg-darker);
+    border: none;
+    margin-bottom: 1rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+.card-title {
+    font-weight: bold;
+}
+
+.card-text {
+    color: var(--text-muted);
+}
+
+/* Hover Effects on Cards */
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Button Styles */
+.btn {
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: var(--text-light);
+}
+
+.btn-primary:hover {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+}
+
+.btn-outline-primary {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+}
+
+/* Scroll-to-Top Button */
+#scrollToTopBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none;
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    border: none;
+    border-radius: 50%;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#scrollToTopBtn:hover {
+    background-color: var(--secondary-color);
+}
+
+/* Dark Mode Toggle */
+.dark-mode {
+    --bg-dark: #121212;
+    --bg-darker: #1f1f1f;
+    --primary-color: #ff4081;
+    --secondary-color: #e91e63;
+    --text-light: #ffffff;
+    --text-muted: #b0b0b0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .stats {
+        flex-direction: column;
+    }
+
+    .testimonial-carousel {
+        flex-wrap: nowrap;
+    }
+
+    h1, h2, h4 {
+        font-size: 1.5rem;
+    }
+}
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Stats Section */
 .stats {
     display: flex;
+    justify-content: space-around;
     flex-wrap: wrap;
-    gap: 1rem;
     margin-top: 2rem;
 }
 
 .stat {
-    flex: 1 1 calc(50% - 1rem);
-    background-color: #fff; /* White background */
-    padding: 1rem;
+    background-color: var(--bg-darker);
+    color: var(--text-light);
     border-radius: 10px;
+    padding: 1rem;
     text-align: center;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 150px;
+    margin: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.stat:nth-child(1) {
+    background-color: #ff4081;
+}
+
+.stat:nth-child(2) {
+    background-color: #e91e63;
+}
+
+.stat:nth-child(3) {
+    background-color: #9c27b0;
+}
+
+.stat:nth-child(4) {
+    background-color: #673ab7;
+}
+
+.stat:nth-child(5) {
+    background-color: #3f51b5;
+}
+
+.stat:nth-child(6) {
+    background-color: #2196f3;
 }
 
 .stat strong {
     display: block;
     font-size: 2rem;
-    color: #e74c3c; /* Red color */
-}
-
-.stat p {
-    margin: 0;
-    font-size: 1rem;
-    color: #666;
-}
-
-#features {
-    background-color: #ecf0f1; /* Light grey background */
-    color: #333; /* Dark grey text color */
-}
-
-#features h2 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-}
-
-.feature-box {
-    background-color: #fff; /* White background */
-    padding: 1.5rem;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
-}
-
-.feature-box:hover {
-    transform: translateY(-10px);
-}
-
-.feature-box img {
-    max-width: 100px;
-    margin-bottom: 1rem;
-}
-
-.feature-box h4 {
-    font-size: 1.5rem;
     margin-bottom: 0.5rem;
 }
 
-.feature-box p {
-    font-size: 1rem;
-    color: #666;
-}
-
-#testimonials {
-    background-color: #2c3e50; /* Dark blue background */
-    color: #fff;
-    padding: 3rem 0;
-}
-
-.testimonial-carousel {
-    display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-}
-
-.testimonial-item {
-    flex: 0 0 100%;
-    scroll-snap-align: center;
+/* Chat Styles */
+.chat-sidebar {
+    background-color: var(--bg-darker);
     padding: 1rem;
-}
-
-.testimonial-item .card {
-    background-color: #000;
-    border: none;
-}
-
-.testimonial-card {
-    background-color: #333;
-    border: none;
-    padding: 2rem;
     border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s;
 }
 
-.testimonial-card:hover {
-    transform: translateY(-10px);
+.chat-item {
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
-.testimonial-card img {
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-    border: 3px solid #fff;
+.chat-item:hover {
+    background-color: var(--bg-dark);
 }
 
-.testimonial-card .card-title {
-    font-size: 1.25rem;
-    margin-top: 1rem;
-    color: #e74c3c; /* Red color */
+.chat-item.unread {
+    background-color: #2a52be; /* Blue */
 }
 
-.testimonial-card .card-text {
-    font-size: 1rem;
-    color: #ccc;
+.chat-header {
+    background-color: var(--bg-darker);
+    padding: 1rem;
+    border-radius: 10px;
 }
 
-#faqs {
-    background-color: #ecf0f1; /* Light grey background */
-    color: #333; /* Dark grey text color */
+.chat-container {
+    background-color: var(--bg-darker);
+    padding: 1rem;
+    border-radius: 10px;
+    height: 400px;
+    overflow-y: auto;
 }
 
-#faqs h2 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
+.input-group {
+    background-color: var(--bg-darker);
+    border-radius: 10px;
+    padding: 10px;
 }
 
-#contact {
-    background-color: #ecf0f1; /* Light grey background */
-    color: #333; /* Dark grey text color */
+.input-group .form-control {
+    background-color: var(--bg-dark);
+    border: none;
+    color: var(--text-light);
 }
 
-#contact h2 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
+.input-group .form-control::placeholder {
+    color: var(--text-light); /* Make placeholder text more visible */
 }
 
-footer {
-    background-color: #2c3e50; /* Dark blue background */
-    color: white;
-    padding: 1rem 0;
+.input-group .btn {
+    background-color: #2a52be; /* Blue */
+    border: none;
 }
 
-footer p {
-    margin: 0;
+.input-group .btn:hover {
+    background-color: #1a3b92; /* Darker Blue */
 }
 
-footer ul {
-    padding: 0;
-    list-style: none;
+.text-success {
+    color: #2a52be !important; /* Blue */
 }
 
-footer ul li {
-    display: inline;
-    margin: 0 10px;
+.text-muted {
+    color: #b0b0b0 !important; /* Light Gray */
 }
 
-footer ul li a {
-    color: white;
-    text-decoration: none;
+.text-info {
+    color: #17a2b8 !important; /* Light Blue */
 }
