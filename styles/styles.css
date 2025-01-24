@@ -2,8 +2,8 @@
 :root {
     --bg-dark: #121212;
     --bg-darker: #1f1f1f;
-    --primary-color: #ff4081;
-    --secondary-color: #e91e63;
+    --primary-color: #1760ff;
+    --secondary-color: #0645f2;
     --text-light: #ffffff;
     --text-muted: #b0b0b0;
     --text-dark: #121212; /* Dark mode text color */
@@ -376,4 +376,177 @@ html {
 
 .text-info {
     color: #17a2b8 !important; /* Light Blue */
+}
+
+/* Profile Page Styles */
+.profile-summary {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.profile-summary img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+}
+
+.profile-summary h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.profile-summary p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.skills-section, .activity-section, .connections-section {
+    margin-bottom: 2rem;
+}
+
+.skills-section h3, .activity-section h3, .connections-section h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.skill-card, .activity-item, .connection-item {
+    background-color: var(--bg-darker);
+    border: 1px solid #444;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+.skill-card .btn, .activity-item .btn, .connection-item .btn {
+    margin-left: 0.5rem;
+}
+
+.container-fluid {
+    padding: 1rem;
+    margin-bottom: 2rem;
+}
+
+.badge {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+}
+
+.btn-outline-secondary {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+.btn-outline-secondary:hover {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+}
+
+.btn-outline-danger {
+    border-color: var(--secondary-color);
+    color: var(--secondary-color);
+}
+
+.btn-outline-danger:hover {
+    background-color: var(--secondary-color);
+    color: var(--text-light);
+}
+
+.list-group-item {
+    background-color: var(--bg-darker);
+    color: var(--text-light);
+}
+
+.list-group-item .text-muted {
+    color: var(--text-muted);
+}
+
+/* Notifications Styles */
+.notification-card {
+    display: flex;
+    align-items: center;
+    background-color: var(--bg-darker);
+    border-radius: 10px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.notification-card.unread {
+    background-color: rgba(23, 96, 255, 0.1);
+    border-left: 4px solid var(--primary-color);
+}
+
+.notification-card:hover {
+    transform: translateX(5px);
+}
+
+.notification-icon {
+    width: 40px;
+    height: 40px;
+    background-color: var(--bg-dark);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1rem;
+}
+
+.notification-icon i {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+}
+
+.notification-content {
+    flex: 1;
+}
+
+.notification-text {
+    margin: 0;
+    color: var(--text-light);
+}
+
+.notification-time {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.notification-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.notification-filters .list-group-item {
+    background-color: var(--bg-darker);
+    color: var(--text-light);
+    border: none;
+    margin-bottom: 0.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.notification-filters .list-group-item:hover {
+    background-color: rgba(23, 96, 255, 0.1);
+}
+
+.notification-filters .list-group-item.active {
+    background-color: var(--primary-color);
+}
+
+/* Responsive Notifications */
+@media (max-width: 768px) {
+    .notification-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .notification-icon {
+        margin: 0 0 1rem 0;
+    }
+
+    .notification-actions {
+        margin-top: 1rem;
+        justify-content: center;
+    }
 }

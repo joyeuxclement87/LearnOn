@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notifications - LearnOn</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./styles/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+</head>
+<body class="bg-dark text-light">
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark shadow-sm fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="dashboard.html">LearnOn</a>
+            <!-- ...existing code... -->
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container-fluid my-5 pt-5">
+        <div class="row">
+            <!-- Sidebar -->
+            <div class="col-12 col-md-3">
+                <div class="notification-filters card shadow-sm mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title mb-3">Filter Notifications</h5>
+                        <div class="list-group">
+                            <button class="list-group-item active d-flex justify-content-between align-items-center" data-filter="all">
+                                All
+                                <span class="badge bg-primary rounded-pill">12</span>
+                            </button>
+                            <button class="list-group-item d-flex justify-content-between align-items-center" data-filter="messages">
+                                Messages
+                                <span class="badge bg-primary rounded-pill">4</span>
+                            </button>
+                            <button class="list-group-item d-flex justify-content-between align-items-center" data-filter="skills">
+                                Skill Matches
+                                <span class="badge bg-primary rounded-pill">3</span>
+                            </button>
+                            <button class="list-group-item d-flex justify-content-between align-items-center" data-filter="sessions">
+                                Sessions
+                                <span class="badge bg-primary rounded-pill">2</span>
+                            </button>
+                            <button class="list-group-item d-flex justify-content-between align-items-center" data-filter="feedback">
+                                Feedback
+                                <span class="badge bg-primary rounded-pill">3</span>
+                            </button>
+                        </div>
+                        <button class="btn btn-primary w-100 mt-3" id="markAllRead">
+                            Mark All as Read
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Notifications List -->
+            <div class="col-12 col-md-9">
+                <h2 class="mb-4">Your Notifications</h2>
+                <div class="notifications-container">
+                    <!-- Message Notification -->
+                    <div class="notification-card unread" data-type="messages">
+                        <div class="notification-icon">
+                            <i class="bi bi-envelope-fill"></i>
+                        </div>
+                        <div class="notification-content">
+                            <p class="notification-text">New message from Jane Smith about Python tutoring</p>
+                            <span class="notification-time">5 minutes ago</span>
+                        </div>
+                        <div class="notification-actions">
+                            <a href="messages.html" class="btn btn-primary btn-sm">View</a>
+                            <button class="btn btn-outline-secondary btn-sm dismiss-btn">Dismiss</button>
+                        </div>
+                    </div>
+
+                    <!-- Skill Match Notification -->
+                    <div class="notification-card" data-type="skills">
+                        <div class="notification-icon">
+                            <i class="bi bi-check2-circle"></i>
+                        </div>
+                        <div class="notification-content">
+                            <p class="notification-text">New skill match: JavaScript mentor available</p>
+                            <span class="notification-time">1 hour ago</span>
+                        </div>
+                        <div class="notification-actions">
+                            <a href="Browseskill.html" class="btn btn-primary btn-sm">View</a>
+                            <button class="btn btn-outline-secondary btn-sm dismiss-btn">Dismiss</button>
+                        </div>
+                    </div>
+
+                    <!-- Session Notification -->
+                    <div class="notification-card unread" data-type="sessions">
+                        <div class="notification-icon">
+                            <i class="bi bi-calendar-event"></i>
+                        </div>
+                        <div class="notification-content">
+                            <p class="notification-text">Upcoming session: Python Programming with Jane Smith</p>
+                            <span class="notification-time">2 hours ago</span>
+                        </div>
+                        <div class="notification-actions">
+                            <a href="#" class="btn btn-primary btn-sm">View</a>
+                            <button class="btn btn-outline-secondary btn-sm dismiss-btn">Dismiss</button>
+                        </div>
+                    </div>
+
+                    <!-- Feedback Notification -->
+                    <div class="notification-card" data-type="feedback">
+                        <div class="notification-icon">
+                            <i class="bi bi-star-fill"></i>
+                        </div>
+                        <div class="notification-content">
+                            <p class="notification-text">New feedback received for your Python tutoring session</p>
+                            <span class="notification-time">1 day ago</span>
+                        </div>
+                        <div class="notification-actions">
+                            <a href="profile.html" class="btn btn-primary btn-sm">View</a>
+                            <button class="btn btn-outline-secondary btn-sm dismiss-btn">Dismiss</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pagination -->
+                <nav aria-label="Notifications pagination" class="mt-4">
+                    <ul class="pagination justify-content-center">
+                        <li class="page-item disabled">
+                            <a class="page-link" href="#" tabindex="-1">Previous</a>
+                        </li>
+                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">Next</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light text-center py-3">
+        <!-- ...existing code... -->
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./scripts/script.js"></script>
+</body>
+</html>

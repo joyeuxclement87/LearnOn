@@ -8,87 +8,6 @@
     <link rel="stylesheet" href="./styles/styles.css">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            background-color: var(--bg-dark);
-            color: var(--text-light);
-        }
-        .navbar {
-            background-color: var(--bg-darker);
-        }
-        .navbar-brand, .nav-link {
-            color: var(--text-light) !important;
-        }
-        .nav-link:hover {
-            color: var(--primary-color) !important;
-        }
-        .profile-summary {
-            text-align: center;
-            margin-bottom: 2rem;
-        }
-        .profile-summary img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            margin-bottom: 1rem;
-        }
-        .profile-summary h2 {
-            font-size: 2rem;
-            margin-bottom: 0.5rem;
-        }
-        .profile-summary p {
-            font-size: 1rem;
-            margin-bottom: 1rem;
-        }
-        .skills-section, .activity-section, .connections-section {
-            margin-bottom: 2rem;
-        }
-        .skills-section h3, .activity-section h3, .connections-section h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-        }
-        .skill-card, .activity-item, .connection-item {
-            background-color: var(--bg-darker);
-            border: 1px solid #444;
-            margin-bottom: 1rem;
-            padding: 1rem;
-            border-radius: 10px;
-        }
-        .skill-card .btn, .activity-item .btn, .connection-item .btn {
-            margin-left: 0.5rem;
-        }
-        .container-fluid {
-            padding: 1rem;
-            margin-bottom: 2rem;
-        }
-        .badge {
-            background-color: var(--primary-color);
-            color: var(--text-light);
-        }
-        .btn-outline-secondary {
-            border-color: var(--primary-color);
-            color: var(--primary-color);
-        }
-        .btn-outline-secondary:hover {
-            background-color: var(--primary-color);
-            color: var(--text-light);
-        }
-        .btn-outline-danger {
-            border-color: var(--secondary-color);
-            color: var(--secondary-color);
-        }
-        .btn-outline-danger:hover {
-            background-color: var(--secondary-color);
-            color: var(--text-light);
-        }
-        .list-group-item {
-            background-color: var(--bg-darker);
-            color: var(--text-light);
-        }
-        .list-group-item .text-muted {
-            color: var(--text-muted);
-        }
-    </style>
 </head>
 <body class="bg-dark text-light">
     <!-- Header -->
@@ -200,5 +119,35 @@
         <div class="connections-section">
             <h3>Connections</h3>
             <div class="connection-item d-flex align-items-center">
-                <img src="img/42907.jpg" alt="Jane Smith" class="rounded-circle me-2" style="
+                <img src="img/42907.jpg" alt="Jane Smith" class="rounded-circle me-2" style="width: 40px; height: 40px;">
+                <div>
+                    <span class="fw-bold">Jane Smith</span>
+                    <p class="mb-0">Graphic Designer</p>
+                </div>
+                <button class="btn btn-outline-danger btn-sm ms-auto">Remove</button>
+            </div>
+            <!-- Add more connection items as needed -->
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light text-center py-3">
+        <div class="container">
+            <p class="mb-0">&copy; 2023 LearnOn. All rights reserved.</p>
+            <div class="mt-2">
+                <a href="#" class="text-light me-3">Privacy Policy</a>
+                <a href="#" class="text-light me-3">Terms of Service</a>
+                <a href="#" class="text-light">Contact Us</a>
+            </div>
+            <div class="mt-2">
+                <a href="#" class="text-light me-2"><i class="bi bi-facebook"></i></a>
+                <a href="#" class="text-light me-2"><i class="bi bi-twitter"></i></a>
+                <a href="#" class="text-light"><i class="bi bi-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
 

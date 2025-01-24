@@ -10,6 +10,100 @@ document.addEventListener('DOMContentLoaded', () => {
     changePage(1);
 });
 
+// Notifications functionality
+document.addEventListener('DOMContentLoaded', function() {
+    initializeNotifications();
+});
+
+function initializeNotifications() {
+    const filterButtons = document.querySelectorAll('.notification-filters .list-group-item');
+    const dismissButtons = document.querySelectorAll('.dismiss-btn');
+    const markAllReadBtn = document.getElementById('markAllRead');
+
+    // Filter notifications
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const filterType = button.getAttribute('data-filter');
+            filterNotifications(filterType);
+            
+            // Update active state
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+        });
+    });
+
+    // Dismiss individual notifications
+    dismissButtons.forEach(button => {
+        button.addEventListener('click', (e) => {
+            const card = e.target.closest('.notification-card');
+            dismissNotification(card);
+        });
+    });
+
+    // Mark all as read
+    if (markAllReadBtn) {
+        markAllReadBtn.addEventListener('click', markAllNotificationsAsRead);
+    }
+
+    // Initialize real-time updates
+    initializeRealTimeUpdates();
+}
+
+function filterNotifications(type) {
+    const notifications = document.querySelectorAll('.notification-card');
+    notifications.forEach(notification => {
+        if (type === 'all' || notification.getAttribute('data-type') === type) {
+            notification.style.display = 'flex';
+        } else {
+            notification.style.display = 'none';
+        }
+    });
+}
+
+function dismissNotification(card) {
+    card.style.opacity = '0';
+    setTimeout(() => {
+        card.remove();
+        updateNotificationCounts();
+    }, 300);
+}
+
+function markAllNotificationsAsRead() {
+    const unreadNotifications = document.querySelectorAll('.notification-card.unread');
+    unreadNotifications.forEach(notification => {
+        notification.classList.remove('unread');
+    });
+    updateNotificationCounts();
+}
+
+function updateNotificationCounts() {
+    const types = ['all', 'messages', 'skills', 'sessions', 'feedback'];
+    types.forEach(type => {
+        const count = document.querySelectorAll(
+            type === 'all' 
+                ? '.notification-card' 
+                : `.notification-card[data-type="${type}"]`
+        ).length;
+        const badge = document.querySelector(`[data-filter="${type}"] .badge`);
+        if (badge) {
+            badge.textContent = count;
+        }
+    });
+}
+
+function initializeRealTimeUpdates() {
+    // Simulating real-time updates (replace with actual WebSocket implementation)
+    setInterval(() => {
+        // Check for new notifications
+        checkNewNotifications();
+    }, 30000); // Check every 30 seconds
+}
+
+function checkNewNotifications() {
+    // This would be replaced with actual API calls in production
+    console.log('Checking for new notifications...');
+}
+
 // Chat Functionality
 function initializeChatListeners() {
     const sendBtn = document.getElementById('send-btn');
