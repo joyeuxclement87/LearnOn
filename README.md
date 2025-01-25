@@ -60,11 +60,11 @@ To get started with LearnOn, follow these steps:
 
 1. Clone the repository:
     ```sh
-    git clone https://github.com/your-username/learnon.git
+    git clone https://github.com/joyeuxclement87/LearnOn.git
     ```
 2. Navigate to the project directory:
     ```sh
-    cd learnon
+    cd learnOn
     ```
 3. Open `index.html` in your preferred web browser to view the landing page.
 
@@ -110,7 +110,7 @@ The "Reviews" section showcases testimonials from users who have benefited from 
 ## Roadmap
 
 - [x] Basic platform features
-- [x] Video conferencing
+- [ ] Video conferencing
 - [ ] Mobile apps (iOS/Android)
 - [ ] AI-powered learning recommendations
 - [ ] Blockchain certificates
@@ -150,9 +150,9 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 <div align="center">
 
-**[View Live Demo](https://learnon-demo.netlify.app)** | **[Get Started](#getting-started)** | **[Documentation](https://docs.learnon.com)**
+**[View Live Demo](https://joyeuxclement87.github.io/LearnOn/)** | **[Get Started](#getting-started)** | **[Documentation](https://docs.learnon.com)**
 
-Made with ❤️ by the LearnOn Team
+Made with ❤️ by Joyeuxclement87
 
 </div>
 
