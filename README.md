@@ -8,7 +8,7 @@ A modern skill-sharing platform connecting passionate teachers with eager learne
 
 [View Live Demo](https://joyeuxclement87.github.io/LearnOn/)
 
-![LearnOn Platform Preview](preview.png)
+![LearnOn Platform Preview](./img/preview.png)
 
 ## Table of Contents
 
